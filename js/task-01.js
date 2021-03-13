@@ -1041,7 +1041,7 @@ console.log(calculateTotalPrice([100,200,300]));*/
  * - если нашли логин, вывести сообщение "Пользователь [login] найден."
  */
 
- const logins = ["qwerty", "asdfgh", "zxcvbn", "poiuyt"];
+ //const logins = ["qwerty", "asdfgh", "zxcvbn", "poiuyt"];
   // const loginToFind = "poiuyt";
 
   // const message = logins.includes(loginToFind) 
@@ -1083,11 +1083,860 @@ const findLogin = function (allLogins, loginToFind) {
   ? `Пользователь ${loginToFind} найден.` 
   : `Пользователь ${loginToFind} не найден.`;
   }
-
-
-
   console.log(findLogin(logins, "qwerty44"));
   console.log(findLogin(logins, "asdfgh"));
   console.log(findLogin(logins, "zxcvbn55")); 
   console.log(findLogin(logins, "poiuyt"));
 */
+
+//const name = prompt("Какое официальное название Javascript?");
+//const resault = name === "ECMAScript" ? "Верно!" : "Не знаете? ECMAScript!";
+//alert(name === "ECMAScript" ? "Верно!" : "Не знаете? ECMAScript!");
+
+/*const name = prompt("Какое официальное название Javascript?");
+let resault;
+if(name === "ECMAScript") {
+  resault = "Верно!";
+}else  if (name === null) {
+  resault = "Не ленись";
+}
+else {
+  resault = "Не знаете? ECMAScript!";
+}
+console.log(resault);*/
+
+
+/*
+const year = prompt("Введите год своего рождения");
+const age = 2021 - parseInt(year);
+
+let word;
+const lastNumber = age % 10;
+const twoLastNumber = age % 100;
+if (twoLastNumber < 20 || twoLastNumber > 10) {
+  word = word = "лет";
+} else
+if (lastNumber === 0 || lastNumber >= 5) {
+  word = "лет";
+} else if (lastNumber === 1) {
+  word = "год";
+} else  {
+  word = "года";
+}
+console.log(`Вам ${age} ${word}`);*/
+
+
+/*let i = 1;
+while(i <=10) {
+  console.log(i);
+  i++
+}*/
+
+/*function makeMessage (name, price) {
+  
+   const message = `Вы выбрали ${name}, цена заштуку ${price} кредитов.`;
+   console.log(message);
+  
+  return message;
+};
+
+makeMessage ("Радар", 6150);
+  
+makeMessage ("Сканер", 3500);
+ 
+makeMessage ("Реактор", 8000);
+ 
+makeMessage ("Двигатель", 4070);*/
+ 
+/*function calculateTotalPrice (orderedQuantity, pricePerItem) {
+  // Пиши код ниже этой строки
+  const totalPrice = orderedQuantity*pricePerItem;
+  
+  // Пиши код выше этой строки
+  return totalPrice;
+};
+calculateTotalPrice (5, 100);
+calculateTotalPrice (8, 60);
+calculateTotalPrice (3, 400);
+calculateTotalPrice (1, 3500);
+calculateTotalPrice (12, 70);*/
+
+
+/*function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+  // Пиши код ниже этой строки
+  let totalPrice = orderedQuantity*pricePerDroid+deliveryFee;
+  const message = `Вы заказали дроидов на сумму ${totalPrice} кредитов. Доставка (${deliveryFee} кредитов) включена в сумму заказа.`;
+
+  // Пиши код выше этой строки
+  return message;
+}
+makeOrderMessage(2,100,50);
+makeOrderMessage(4,300,100);
+makeOrderMessage(10,70,20);*/
+
+
+
+/*function isAdult(age) {
+  // Пиши код ниже этой строки
+  const passed = age >= 18;
+ console.log(passed);
+  // Пиши код выше этой строки
+  return passed;
+}
+isAdult(20);
+isAdult(14);
+isAdult(8);
+isAdult(37);*/
+
+/*function isValidPassword(password) {
+  const SAVED_PASSWORD = 'jqueryismyjam';
+  // Пиши код ниже этой строки
+  const isMatch = password === 'jqueryismyjam';
+  console.log(isMatch);
+  // Пиши код выше этой строки
+  return isMatch;
+}
+isValidPassword('mangodab3st'); 
+isValidPassword('kiwirul3z');
+isValidPassword('jqueryismyjam');*/
+
+/*function checkAge(age) {
+  let message;
+
+  if (age >= 18) { // Дополни эту строку
+    message = 'Вы совершеннолетний человек';
+  } else {
+    message = 'Вы не совершеннолетний человек';
+  }
+  console.log(message);
+  return message;
+}
+
+checkAge(20);
+checkAge(10);*/
+
+/*function checkStorage(available, ordered) {
+  let message;
+  // Пиши код ниже этой строки
+  const order = ordered < available ? message = 'Заказ оформлен, с вами свяжется менеджер' : message = 'На складе недостаточно товаров!';
+  console.log(order);
+  // Пиши код выше этой строки
+  return message;
+}
+checkStorage(100, 50);
+checkStorage(100, 130);
+checkStorage(200, 20);
+checkStorage(200, 150);
+checkStorage(150, 180);*/
+
+/*function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Пиши код ниже этой строки
+const totalPrice = pricePerDroid*orderedQuantity;
+if (totalPrice < customerCredits) {
+  message = `Вы купили ${orderedQuantity} дроидов, 
+на счету осталось ${customerCredits-totalPrice} кредитов`;
+} else if (totalPrice === customerCredits) {
+  message = `Вы купили ${orderedQuantity} дроидов, на счету осталось ${customerCredits-totalPrice} кредитов`;
+} else {
+  message = 'Недостаточно средств на счету!';
+}
+console.log(message);
+  // Пиши код выше этой строки
+  return message;
+}
+makeTransaction(3000,5,23000);
+makeTransaction(1000,3,15000);
+makeTransaction(5000,10,8000);
+makeTransaction(2000,8,10000);
+makeTransaction(500,10,5000);*/
+
+/*function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+  let message;
+
+  if (password === null) { // Дополни эту строку
+    message =  'Отменено пользователем!';
+  } else if (password === 'jqueryismyjam') { // Дополни эту строку
+    message = 'Добро пожаловать!';
+  } else {
+    message = 'Доступ запрещен, неверный пароль!';
+  }
+  console.log(message);
+  return message;
+}
+checkPassword('mangohackzor');
+checkPassword(null);
+checkPassword('polyhax');
+checkPassword('jqueryismyjam');*/
+
+
+/*function isNumberInRange(start, end, number) {
+  const isInRange = start <= number && number <= end; // дополни эту строку
+console.log(isInRange);
+  return isInRange;
+}
+isNumberInRange(10,30,17);
+isNumberInRange(10,30,5);
+isNumberInRange(20,50,24);
+isNumberInRange(20,50,76);*/
+
+/*function checkIfCanAccessContent(subType) {
+  const canAccessContent = subType === 'pro' || subType === 'vip'; // дополни эту строку
+console.log(canAccessContent);
+  return canAccessContent;
+}
+checkIfCanAccessContent('pro');
+checkIfCanAccessContent('starter');
+checkIfCanAccessContent('vip');
+checkIfCanAccessContent('free');*/
+
+/*function isNumberNotInRange(start, end, number) {
+  const isInRange = number >= start && number <= end;
+  const isNotInRange = !isInRange; // Дополни эту строку
+console.log(isNotInRange);
+  return isNotInRange;
+}
+isNumberNotInRange(10, 30, 17);
+isNumberNotInRange(10, 30, 5);
+isNumberNotInRange(20, 50, 24);
+isNumberNotInRange(20, 50, 76);*/
+
+
+/*function getDiscount(totalSpent) {
+  const BASE_DISCOUNT = 0;
+  const BRONZE_DISCOUNT = 0.02;
+  const SILVER_DISCOUNT = 0.05;
+  const GOLD_DISCOUNT = 0.1;
+  let discount;
+  // Пиши код ниже этой строки
+if (totalSpent >= 50000) {
+  discount = GOLD_DISCOUNT;
+} else if (totalSpent < 50000 && totalSpent >= 20000) {
+  discount = SILVER_DISCOUNT;
+} else if (totalSpent < 20000 && totalSpent >= 5000) {
+  discount = BRONZE_DISCOUNT;
+} else {
+  discount = BASE_DISCOUNT;
+}
+console.log(discount);
+  // Пиши код выше этой строки
+  return discount;
+}
+getDiscount(137000); 
+getDiscount(46900); 
+getDiscount(8250);
+getDiscount(1300);
+getDiscount(5000);
+getDiscount(20000);
+getDiscount(50000);*/
+
+
+/*function checkStorage(available, ordered) {
+  let message;
+  // Пиши код ниже этой строки
+  message =  available <= ordered? 'На складе недостаточно товаров!' : 'Заказ оформлен, с вами свяжется менеджер';
+  console.log(message);
+  // Пиши код выше этой строки
+  
+  return message;
+}
+checkStorage(100,50);
+checkStorage(100,130);
+checkStorage(200,20);
+checkStorage(200,150);
+checkStorage(150,180);*/
+
+
+
+/*function getSubscriptionPrice(type) {
+  let price;
+  // Пиши код ниже этой строки
+
+ switch (type) { // Дополни эту строку
+    case 'starter': // Дополни эту строку
+      price = 0; // Дополни эту строку
+      break;
+
+    case 'professional': // Дополни эту строку
+      price = 20; // Дополни эту строку
+      break;
+
+    case 'organization': // Дополни эту строку
+      price = 50; // Дополни эту строку
+      break;
+  }
+ 
+  // Пиши код выше этой строки
+  return price;
+}*/
+
+/*function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+  let message;
+
+  if (password === null) {
+    message = 'Отменено пользователем!';
+  } else if (password === ADMIN_PASSWORD) {
+    message = 'Добро пожаловать!';
+  } else {
+    message = 'Доступ запрещён, неверный пароль!';
+  }
+
+  return message;
+}*/
+
+/*function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+  let message;
+  switch (password) {
+      case null:
+        message = 'Отменено пользователем!';
+        break;
+        case 'jqueryismyjam':
+          message = 'Добро пожаловать!';
+          break;
+      default:
+        message = 'Доступ запрещен, неверный пароль!';
+  }
+  return message;
+}*/
+
+
+/*function getShippingCost(country) {
+  let message;
+  // Пиши код ниже этой строки
+  switсh (country) {
+
+    case 'Австралия':
+    message = 'Доставка в Австралия будет стоить 170 кредитов';
+    break;
+
+    case 'Китай':
+    message = 'Доставка в Австралия будет стоить 100 кредитов';
+    break;
+
+    case 'Чили':
+    message = 'Доставка в Чили будет стоить 250 кредитов';
+    break;
+    case 'Ямайка':
+    message = 'Доставка в Ямайка будет стоить 120 кредитов';
+    break;
+  }
+  // Пиши код выше этой строки
+  return message;
+}*/
+
+
+/*function getNameLength(name) {
+  const message = `Длина вашего имени ${name.length} символа(ов)`; // Дополни эту строку
+  console.log(message);
+  return message;
+}
+getNameLength('Poly');
+getNameLength('Harambe');
+getNameLength('Billy');
+getNameLength('Joe');*/
+
+/*const productName = 'Ремонтный дроид';
+console.log(productName[0]); // 'P'
+console.log(productName[5]); // 'т'
+console.log(productName[14]); // 'д'
+console.log(productName[productName.length - 1]); // 'д'*/
+
+
+/*const courseTopic = 'JavaSript для начинающих';
+// Пиши код ниже этой строки
+
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement = courseTopic[courseTopic.length-1];*/
+
+
+/*function getSubstring(string, length) {
+  const substring = "Привет мир".slice(string, length); // Дополни эту строку
+  
+  console.log(substring);
+  return substring;
+}
+getSubstring('Привет мир', 3);
+getSubstring('Привет мир', 6);
+getSubstring('Привет мир', 8);
+getSubstring('Привет мир', 10);
+getSubstring('Привет мир', 0);*/
+
+
+
+/*function formatMessage(message, maxLength) {
+  let result;
+// Пиши код ниже этой строки
+if (message.length <= maxLength) {
+  result = message;
+} else {
+  result = message.slice(0, maxLength) + "...";
+}
+console.log(result);
+// Пиши код выше этой строки
+  return result;
+}
+formatMessage('Curabitur ligula sapien', 16);
+formatMessage('Curabitur ligula sapien', 23);
+formatMessage('Vestibulum facilisis purus nec', 20);
+formatMessage('Vestibulum facilisis purus nec', 30);
+formatMessage('Nunc sed turpis a felis in nunc fringilla', 15);
+formatMessage('Nunc sed turpis a felis in nunc fringilla', 41);*/
+
+/*function normalizeInput(input) {
+  const normalizedInput = input.toLowerCase(); // Дополни эту строку
+  console.log(normalizedInput);
+  return normalizedInput;
+}
+normalizeInput('Привет мир');
+normalizeInput('Это НЕ СпаМ');
+normalizeInput('Большие СКИДКИ');*/
+
+
+/*function checkForName(fullName, name) {
+  const result = fullName.includes(name) && name === name[0].toUpperCase() + name.slice(1).toLowerCase(); // Дополни эту строку
+  console.log(result);
+   return result;
+ }
+ checkForName('Егор Колбасов', 'Егор');
+ checkForName('Егор Колбасов', 'егор');
+ checkForName('Егор Колбасов', 'егОр');
+ checkForName('Егор Колбасов', 'Женя');
+ checkForName('Вадим Некрасов', 'Вадим');
+ checkForName('Вадим Некрасов', 'вадим');
+ checkForName('Вадим Некрасов', 'Дима');*/
+
+
+
+
+ /*function checkForSpam(message) {
+  let result;
+  // Пиши код ниже этой строки
+ result = message.toLowerCase().includes("sale") || message.toLowerCase().includes("spam") ;
+ console.log(result);
+  // Пиши код выше этой строки
+  return result;
+}
+checkForSpam('Latest technology news');
+checkForSpam('JavaScript weekly newsletter');
+checkForSpam('Get best sale offers now!');
+checkForSpam('Amazing SalE, only tonight!');
+checkForSpam('Trust me, this is not a spam message');
+checkForSpam('Get rid of sPaM emails. Our book in on sale!');
+checkForSpam('[SPAM] How to earn fast money?');*/
+
+
+
+
+/*const numbers = [];
+
+for (let i = 0; i < 3; i += 1) {
+  numbers.push(`label-${i}`);
+}
+
+console.log('numbers: ', numbers); // ['label-0', 'label-1', 'label-2']*/
+
+
+
+
+
+/*const matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9],];
+
+console.log(matrix[0][0]); // 1
+console.log(matrix[1][2]); // 6
+console.log(matrix[2][2]); // 9*/
+
+/*const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+let total = 0;
+
+for (let i = 0; i < matrix.length; i += 1) {
+  console.log('Подмассив матрицы matrix[i]: ', matrix[i]);
+
+  for (let j = 0; j < matrix[i].length; j += 1) {
+    console.log('Элемент подмассива матрицы matrix[i][j]: ', matrix[i][j]);
+    total += matrix[i][j];
+  }
+}
+
+console.log(total); // 45*/
+
+
+
+
+/*let a = 5;
+// Присвоение по значению, в памяти будет создана еще
+// одна ячейка в которую будет скопировано значение 5
+let b = a;
+console.log(a); // 5
+console.log(b); // 5
+
+// Изменим значение a
+a = 10;
+console.log(a); // 10
+// Значение b не изменилось так как это отдельная копия
+console.log(b); // 5*/
+
+
+
+/*const a = ['Mango'];
+// Присвоение по ссылке.
+// Так как a это массив, в b записывается ссылка на уже существующий
+// массив в памяти. Теперь a и b указывают на один и тот же массив.
+const b = a;
+console.log(a); // ['Mango']
+console.log(b); // ['Mango']
+
+// Изменим массив, добавив еще один элемент, используя указатель из a
+a.push('Poly');
+console.log(a); // ['Mango', 'Poly']
+
+// b изменилось тоже, потому что b, как и a,
+// просто содержат ссылку на одно и то же место в памяти
+console.log(b); // ['Mango', 'Poly']
+
+// Результат повторяется
+b.push('Ajax');
+console.log(a); // ['Mango', 'Poly', 'Ajax']
+console.log(b); // ['Mango', 'Poly', 'Ajax']*/
+
+
+/*1. Методы split() и join()
+// split
+const message = 'Welcome to Bahamas!';
+
+// Разбивает строку по разделителю, в данном случае это пробел
+console.log(message.split(' ')); // ["Welcome", "to", "Bahamas!"]
+
+// Вызов split с пустой строкой разобьёт по буквам
+console.log(message.split('')); // [много букв :)]
+
+// join
+const clients = ['Mango', 'Poly', 'Ajax'];
+
+// Сошьет все элементы массива в строку,
+// между каждой парой элементов будет указанный разделитель
+console.log(clients.join(' ')); // "Mango Poly Ajax"
+console.log(clients.join(',')); // "Mango,Poly,Ajax"
+console.log(clients.join('-')); // "Mango-Poly-Ajax"*/
+
+
+//2. Методы indexOf() и includes()
+/*const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+
+console.log(clients.indexOf('Poly')); // 2
+console.log(clients.indexOf('Monkong')); // -1*/
+
+/*const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+
+console.log(clients.includes('Poly')); // true
+console.log(clients.includes('Monkong')); // false*/
+
+
+
+//2.1. Проверка множественных условий с includes()
+/*const fruit = 'apple';
+
+if (fruit === 'apple' || fruit === 'strawberry') {
+  console.log('It is a red fruit!');
+}*/
+
+//2.1. Проверка множественных условий с includes()
+/*// Выносим варианты в массив
+const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+const fruit = 'cherry';
+
+if (redFruits.includes(fruit)) {
+  console.log('It is a red fruit!');
+}*/
+
+
+
+
+//3. Методы push(), pop(), shift(), unshift()
+
+// Создаем пустой массив
+/*const stack = [];
+
+// Добавляем элементы в конец массива
+stack.push(1);
+console.log(stack); // [1]
+
+stack.push(2);
+console.log(stack); // [1, 2]
+
+stack.push(3);
+console.log(stack); // [1, 2, 3]
+
+// Удаляем элементы из конца массива
+console.log(stack.pop()); //  3
+//console.log(stack); // [1, 2]
+
+console.log(stack.pop()); //  2
+//console.log(stack); // [1]
+
+console.log(stack.pop()); //  1
+//console.log(stack); // []
+
+console.log(stack.pop()); //  undefined*/
+
+
+
+/*const clients = ['Mango', 'Ajax', 'Poly'];
+
+console.log(clients.shift()); // Mango
+console.log(clients); // ["Ajax", "Poly"]
+
+clients.unshift('Kiwi');
+console.log(clients); // ["Kiwi", "Ajax", "Poly"]*/
+
+//4. Метод slice()
+/*const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+
+// Вернет новый массив в котором будут элементы с индексами от 1 до 2
+console.log(clients.slice(1, 3)); // ["Ajax", "Poly"]
+
+// Вернет новый массив в котором будут
+// элементы с индексами от 1 до (clients.length - 1)
+console.log(clients.slice(1)); // ["Ajax", "Poly", "Kiwi"]
+
+// Вернет копию исходного массива
+console.log(clients.slice()); // ["Mango", Ajax", "Poly", "Kiwi"]
+
+// Вернет новый массив состоящих из последних двух элементом исходного
+console.log(clients.slice(-2)); // ["Poly", "Kiwi"]*/
+
+//5. Метод splice()
+//splice(position, num)
+
+// Предположим, у нас есть массив оценок, который содержит пять чисел от 1 до 5.
+/*const scores = [1, 2, 3, 4, 5];
+
+// Следующая операция удаляет три элемента массива,
+// начиная с первого элемента (индекс 0).
+const deletedScores = scores.splice(0, 3);
+
+// Теперь массив scores содержит два элемента.
+console.log(scores); // [4, 5]
+
+// А массив deletedScores содержит три удаленных элемента.
+console.log(deletedScores); // [1, 2, 3]*/
+
+
+
+//5.2. Вставка элементов в массив
+// Правило   ---    splice(position, 0, new_element_1, new_element_2, ...)
+
+// Предположим, что у вас есть массив с названиями цветов в виде строк.
+/*const colors = ['red', 'green', 'blue'];
+console.log(colors);
+// Следующая операция помещает один новый элемент перед вторым элементом.
+colors.splice(2, 0, 'purple');
+
+// Теперь массив цветов содержит четыре элемента
+// с новым элементом, вставленным во вторую позицию.
+console.log(colors); // ["red", "green", "purple", "blue"]
+
+// Вы можете вставить более одного элемента, передав четвертый, пятый аргумент и т. д.
+colors.splice(1, 0, 'yellow', 'pink');
+console.log(colors);*/
+
+//5.3. Замена элементов массива  Удаление
+// Предположим, у вас есть массив языков программирования из четырех элементов.
+/*const languages = ['C', 'C++', 'Java', 'JavaScript'];
+
+// Следующая операция заменяет второй элемент на новый.
+languages.splice(1, 1, 'Python');
+
+// В массиве языков теперь все еще четыре элемента,
+// но второй элемент теперь «Python» вместо «C++».
+console.log(languages); // ["C", "Python", "Java", "JavaScript"]
+
+// Вы можете заменить один элемент на несколько элементов,
+// передав больше аргументов
+languages.splice(2, 1, 'C#', 'Swift', 'Go');
+
+console.log(languages);
+// ["C", "Python", "C#", "Swift", "Go", "JavaScript"]*/
+
+
+
+//6. Метод concat()
+/*const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+const newClients = ['Monkong', 'Singu'];
+console.log(oldClients);
+console.log(newClients);
+const allClients = oldClients.concat(newClients);
+
+console.log(allClients);
+// ["Mango", "Ajax", "Poly", "Kiwi", "Monkong", "Singu"]
+
+console.log(oldClients);
+// ["Mango", "Ajax", "Poly", "Kiwi"]
+
+console.log(newClients);
+// ["Monkong", "Singu"]*/
+
+
+/*function checkAge(age) {
+  if (age >= 18) { // Дополни эту строку
+    return 'Вы совершеннолетний человек';
+  }
+
+  return 'Вы не совершеннолетний человек';
+}
+checkAge(20);
+checkAge(8);
+checkAge(14);
+checkAge(38);*/
+
+
+
+
+// a, b, c это параметры
+/*const add = function (a, b, c) {
+  return a + b + c;
+};
+
+// 1, 2, 3 это аргументы
+const result = add(1, 2, 3);
+console.log(result); // 6
+
+// 5, 10, 15 это аргументы
+console.log(add(5, 10, 15)); // 30*/
+
+
+
+/*const fnA = function () {
+  console.log('Начала выполняться [fnA]');
+  fnB();
+  console.log('Продолжила выполняться [fnA] после выхода из [fnB]');
+};
+
+const fnB = function () {
+  console.log('Выполняется [fnB]');
+};
+
+console.log('Начал выполнение [main]');
+fnA();
+console.log('Продолжил выполняться [main] после выхода из [fnA]');*/
+
+/*
+ * Начал выполнение [main]
+ * Начала выполняться [fnA]
+ * Выполняется [fnB]
+ * Продолжила выполняться [fnA] после выхода из [fnB]
+ * Продолжил выполняться [main] после выхода из [fnA]
+ */
+
+
+
+
+
+//Собрать массив из строки и потом опять собрать строку
+
+/*const str = "Menya zovyt Artur i ya programist";
+
+function removeWords(str, num) {
+  let res = "";
+
+  const arr = str.split(" ");
+
+
+  const resArr = [];
+
+  for(let i = 0; i < arr.length; i++ ) {
+
+    if(arr[i].length <= num) {
+      resArr.push(arr[i]);
+
+    }
+  }
+
+  res = resArr.join(" ");
+
+ return res;
+
+}
+
+console.log(removeWords(str, 5));*/
+
+
+
+/*function splitMessage(message, delimeter) {
+  let words;
+  // Пиши код ниже этой строки
+  words = message.split(delimeter);
+  console.log(words);
+  // Пиши код выше этой строки
+  return words;
+}
+splitMessage('Манго спешит на поезд', ' ');
+splitMessage('Манго', '');
+splitMessage('лучшее_за_неделю', '_');*/
+
+
+
+/*function calculateEngravingPrice(message, pricePerWord) {
+  // Пиши код ниже этой строки
+const  res = message.split(" ").length*pricePerWord;
+console.log(res);
+
+
+  // Пиши код выше этой строки
+}
+calculateEngravingPrice('JavaScript у меня в крови', 10);
+calculateEngravingPrice('JavaScript у меня в крови', 20);
+calculateEngravingPrice('Веб-разработка это творческая работа', 40);
+calculateEngravingPrice('Веб-разработка это творческая работа', 20);*/
+
+
+
+
+
+/*function calculateTotal(number) {
+  // Пиши код ниже этой строки
+  let total = 0;
+for (let i = 1; i <= number; i += 1 ) {
+  total += i;
+}
+console.log(total);
+return total;
+  // Пиши код выше этой строки
+}
+calculateTotal(1);
+calculateTotal(3);
+calculateTotal(7);
+calculateTotal(18);
+calculateTotal(24);
+calculateTotal();*/
+
+
+
+
+
+/*function calculateTotalPrice(order) {
+  let total = 0;
+  // Пиши код ниже этой строки
+  for (let i = 0; i <= order.length; i += 1 ) {
+    total += order[i];
+    console.log(total);
+    
+  }
+  
+  // Пиши код выше этой строки
+  return total;
+}
+calculateTotalPrice([12, 85, 37, 4]);
+calculateTotalPrice([164, 48, 291]);
+calculateTotalPrice([412, 371, 94, 63, 176]);
+calculateTotalPrice();*/
+
+order = [1, 2, 3, 4, 5];
+console.log(order.length);
