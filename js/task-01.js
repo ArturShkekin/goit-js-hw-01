@@ -1899,7 +1899,7 @@ calculateEngravingPrice('Веб-разработка это творческая
 
 
 
-
+// Задача 18 модуль 2
 /*function calculateTotal(number) {
   // Пиши код ниже этой строки
   let total = 0;
@@ -1920,23 +1920,244 @@ calculateTotal();*/
 
 
 
-
+// Задача 20 модуль 2
 /*function calculateTotalPrice(order) {
   let total = 0;
   // Пиши код ниже этой строки
-  for (let i = 0; i <= order.length; i += 1 ) {
+  for (let i = 0; i < order.length; i += 1 ) {
     total += order[i];
     console.log(total);
-    
   }
-  
+  // Пиши код выше этой строки
+  return total;
+}
+calculateTotalPrice([12, 85, 37, 4]);
+calculateTotalPrice([164, 48, 291]);
+calculateTotalPrice([412, 371, 94, 63, 176]);*/
+
+
+
+
+
+
+
+// Задача 21 Модуль 2
+/*function findLongestWord(string) {
+  // Пиши код ниже этой строки
+  const words = string.split(" ");
+  let LongestWord = words[0];
+  for (let i = 0; i < words.length; i += 1 ) {
+    if (words[i].length > LongestWord.length) {
+      LongestWord = words[i];
+      
+    }
+  }
+  console.log(LongestWord);
+  return LongestWord;
+  // Пиши код выше этой строки
+}
+findLongestWord('The quick brown fox jumped over the lazy dog');
+findLongestWord('Google do a roll');
+findLongestWord('May the force be with you');*/
+
+
+
+// задача 22 модуль 2
+/*function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  // Пиши код ниже этой строки
+  numbers[0] = min;
+  for (let i = min + 1; i <= max; i += 1) {
+    numbers.push(i);
+    if (numbers.includes(min) && numbers.includes(max)) {
+      console.log(numbers);
+    }
+  }
+  // Пиши код выше этой строки
+  return numbers ;
+}
+createArrayOfNumbers(1, 3);
+createArrayOfNumbers(14, 17);
+createArrayOfNumbers(29, 34);*/
+
+
+
+
+
+/*function filterArray(numbers, value) {
+  // Пиши код ниже этой строки
+
+   for (let i = 0; i > value; i =+ 1) {
+     if (numbers[i] < value) {
+      numbers.shift(i);
+     }
+      
+     }
+     console.log(numbers);
+     return numbers;
+   }
+   
+  // Пиши код выше этой строки
+
+filterArray([1, 2, 3, 4, 5], 3);
+filterArray([1, 2, 3, 4, 5], 4);
+filterArray([1, 2, 3, 4, 5], 5);
+filterArray([12, 24, 8, 41, 76], 38);
+filterArray([12, 24, 8, 41, 76], 20);*/
+
+
+
+// Задача 23 модуль 2
+/*function filterArray(numbers, value) {
+  // Пиши код ниже этой строки
+    let mass = [];
+   for (const number of numbers) {
+     if (number > value) {
+      mass.push(number);
+      console.log(mass);
+     }
+     }
+     return mass;
+   }
+   
+  // Пиши код выше этой строки
+
+filterArray([1, 2, 3, 4, 5], 3);
+filterArray([1, 2, 3, 4, 5], 4);
+filterArray([1, 2, 3, 4, 5], 5);
+filterArray([12, 24, 8, 41, 76], 38);
+filterArray([12, 24, 8, 41, 76], 20);*/
+
+
+
+// Задача 24 модуль 2
+/*function checkFruit(fruit) {
+  const fruits = ['яблоко', 'слива', 'груша', 'апельсин'];
+
+  return fruits.includes(fruit); // Дополни эту строку
+}
+checkFruit('слива');
+checkFruit('мандарин');
+checkFruit('груша');
+checkFruit('Груша'); 
+checkFruit('яблоко');*/
+
+
+
+// Задача 25 модуль 2
+/*Function getCommonElements(array1, array2) {
+  // Пиши код ниже этой строки
+let mass = [];
+for (const element of array1) {
+  if (array2.includes(element)) {
+    mass.push(element);
+    console.log(mass);
+  }
+return mass;
+  // Пиши код выше этой строки
+}
+getCommonElements([1, 2, 3], [2, 4]);
+getCommonElements([1, 2, 3], [2, 1, 17, 19]);
+getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]);
+getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]);
+getCommonElements([1, 2, 3], [10, 20, 30]);*/
+
+
+//Задача 26 модуль 2
+/*function calculateTotalPrice(order) {
+  let total = 0;
+  // Пиши код ниже этой строки
+  for (const element of order) {
+    total += element;
+  }
   // Пиши код выше этой строки
   return total;
 }
 calculateTotalPrice([12, 85, 37, 4]);
 calculateTotalPrice([164, 48, 291]);
 calculateTotalPrice([412, 371, 94, 63, 176]);
-calculateTotalPrice();*/
+calculateTotalPrice([]);*/
 
-order = [1, 2, 3, 4, 5];
-console.log(order.length);
+
+
+//Задача 27 модуль 2
+/*function filterArray(numbers, value) {
+  // Пиши код ниже этой строки
+  const filteredNumbers = [];
+
+  for (const number of numbers) {
+
+    if (number > value) {
+      filteredNumbers.push(number);
+      start
+    }
+  }
+
+  return filteredNumbers;
+  // Пиши код выше этой строки
+}
+filterArray([1, 2, 3, 4, 5], 3);
+filterArray([1, 2, 3, 4, 5], 4);
+filterArray([1, 2, 3, 4, 5], 5);
+filterArray([12, 24, 8, 41, 76], 38);
+filterArray([12, 24, 8, 41, 76], 20);*/
+
+
+
+//Задача 29 модуль 2
+/*function getEvenNumbers(start, end) {
+  // Пиши код ниже этой строки
+  let mass = [];
+  for ( let i = start; i <= end; i += 1) {
+   if ( i % 2 === 0) {
+    mass.push(i)
+    console.log(mass);
+   }
+  }
+  return mass;
+  // Пиши код выше этой строки
+}
+getEvenNumbers(2, 5);
+getEvenNumbers(3, 11);
+getEvenNumbers(6, 12);
+getEvenNumbers(8, 8);
+getEvenNumbers(7, 7);
+getEvenNumbers(7, 7);*/
+
+
+
+//Задача 30 модуль 2
+//Дополни код так, чтобы в переменную number записывалось первое число от start до end, которое делится на 5 без остатка.
+/*const start = 6;
+const end = 27;
+let number;
+
+for (let i = start; i < end; i += 1) {
+  if (i % 5 === 0) {
+    number = i;
+    break;
+  }
+}*/
+
+
+
+
+//Задача 32 модуль 2
+//Напиши функцию includes(array, value), которая делает тоже самое, что и метод массива массив.includes(значение) - проверяет, есть ли в массиве array значение value, возвращая true если есть и false в противном случае.
+//При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
+ 
+/*function includes(array, value) {
+  // Пиши код ниже этой строки
+for (const element of array) {
+  if (element === value) {
+    return true;
+}
+return false;
+  // Пиши код выше этой строки
+}
+includes([1, 2, 3, 4, 5], 3);  Это убирать надо из автопроверки
+includes([1, 2, 3, 4, 5], 17);
+includes(['Земля', 'Марс', 'Венера', 'Юпитер', 'Сатурн'], 'Юпитер');
+includes(['Земля', 'Марс', 'Венера', 'Юпитер', 'Сатурн'], 'Уран');
+includes(['яблоко', 'слива', 'груша', 'апельсин'], 'слива');
+includes(['яблоко', 'слива', 'груша', 'апельсин'], 'киви');*/
