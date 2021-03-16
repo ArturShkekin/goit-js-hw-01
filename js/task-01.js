@@ -2161,3 +2161,131 @@ includes(['Земля', 'Марс', 'Венера', 'Юпитер', 'Сатур�
 includes(['Земля', 'Марс', 'Венера', 'Юпитер', 'Сатурн'], 'Уран');
 includes(['яблоко', 'слива', 'груша', 'апельсин'], 'слива');
 includes(['яблоко', 'слива', 'груша', 'апельсин'], 'киви');*/
+
+
+
+
+
+//Задача 7 Модуль 3
+/*const apartment = {
+  imgUrl: 'https://via.placeholder.com/640x480',
+  descr: 'Просторная квартира в центре',
+  rating: 4.7,
+  price: 5000,
+  tags: ['premium', 'promoted', 'top', 'trusted'],
+  owner: {
+    name: 'Генри Сибола',
+    phone: '982-126-1588',
+    email: 'henry.carter@aptmail.com'
+  }
+};
+apartment.area = 60;
+apartment.obsee = {country : "Украина", gorod : "Одесса"};
+// Пиши код ниже этой строки*/
+
+
+
+//Задача 10 Модуль 3
+/*const apartment = {
+  descr: 'Просторная квартира в центре',
+  rating: 4,
+  price: 2153,
+};
+const keys = [];
+const values = [];
+// Пиши код ниже этой строки
+for (const key in apartment) {
+  keys.push(key);
+  console.log(keys);
+  values.push(apartment[key]);
+  console.log(values);
+}*/
+
+
+
+
+//Задача 11 Модуль 3
+/*const keys = [];
+const values = [];
+const advert = {
+  service: 'apt',
+};
+const apartment = Object.create(advert);
+apartment.descr = 'Просторная квартира в центре';
+apartment.rating = 4;
+apartment.price = 2153;
+
+for (const key in apartment) {
+  // Пиши код ниже этой строки
+if (apartment.hasOwnProperty(key)) {
+  keys.push(key);
+  values.push(apartment[key]);
+
+  // Пиши код выше этой строки
+}
+}*/
+
+
+
+
+//Задача 12 Модуль 3
+/*function countProps(object) {
+  let propCount = 0;
+  let mass = [];
+  // Пиши код ниже этой строки
+for(const key in object) {
+  if (object.hasOwnProperty(key)) {
+    mass.push(key);
+    propCount = mass.length;
+    console.log(propCount);
+  }
+}
+  // Пиши код выше этой строки
+  return propCount;
+}
+countProps({});
+countProps({ name: 'Mango', age: 2 });
+countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 });*/
+
+
+
+
+
+
+/*const book = {
+  title: 'Последнее королевство',
+  author: 'Бернард Корнуэлл',
+  genres: ['историческая проза', 'приключения'],
+  rating: 8.38,
+};
+const keys = Object.keys(book);
+console.log(keys); // ['title', 'author', 'genres', 'rating']*/
+
+/*const book = {
+  title: 'Последнее королевство',
+  author: 'Бернард Корнуэлл',
+  genres: ['историческая проза', 'приключения'],
+  rating: 8.38,
+};
+const keys = Object.keys(book);
+
+for (const key of keys) {
+  // Ключ
+  console.log(key);
+  // Значение свойства
+  console.log(book[key]);
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
