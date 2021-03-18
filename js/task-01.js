@@ -2279,9 +2279,262 @@ for (const key of keys) {
 
 
 
+// Задача 18 модуль 3
+/*const products = [
+  { name: 'Радар', price: 1300, quantity: 4 },
+  { name: 'Сканер', price: 2700, quantity: 3 },
+  { name: 'Дроид', price: 400, quantity: 7 },
+  { name: 'Захват', price: 1200, quantity: 9 },
+];
+
+function getProductPrice(productName) {
+  // Пиши код ниже этой строки
+   for (const product of products) {
+  if (productName === product.name) {
+    console.log(product.price);
+    return product.price;
+  }
+}
+return null;
+  // Пиши код выше этой строки
+}
+getProductPrice('Радар');
+getProductPrice('Захват');
+getProductPrice('Сканер');
+getProductPrice('Дроид');
+getProductPrice('Двигатель');*/
 
 
 
+
+
+
+// Задача 19 модуль 3 Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя (ключ) свойства. Функция должна 
+ //вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products. Если в объектах нет свойства с таким именем, 
+//функция должна вернуть пустой массив.
+/*const products = [
+  { name: 'Радар', price: 1300, quantity: 4 },
+  { name: 'Сканер', price: 2700, quantity: 3 },
+  { name: 'Дроид', price: 400, quantity: 7 },
+  { name: 'Захват', price: 1200, quantity: 9 },
+];
+function getAllPropValues(propName) {
+  // Пиши код ниже этой строки
+let res = [];
+for (const product of products) {
+for (const key in product) {
+  if (propName === key) {
+    res.push(product[propName]);
+    console.log(res);
+  }
+}
+} 
+return res;
+  // Пиши код выше этой строки
+}
+getAllPropValues('name');
+getAllPropValues('quantity'); 
+getAllPropValues('price');
+etAllPropValues('category'); */
+
+
+
+
+
+
+// Задача 20 модуль 3    Напиши функцию calculateTotalPrice(productName) которая принимает один параметр 
+//productName - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким
+// именем из массива products.
+/*const products = [
+  { name: 'Радар', price: 1300, quantity: 4 },
+  { name: 'Сканер', price: 2700, quantity: 3 },
+  { name: 'Дроид', price: 400, quantity: 7 },
+  { name: 'Захват', price: 1200, quantity: 9 },
+];
+function calculateTotalPrice(productName) {
+  // Пиши код ниже этой строки
+let summ;
+for (const product of products) {
+  //console.log(product);
+  for (const value in product) {
+    //console.log(value);
+    if (productName === product.name) {
+      //console.log(product.name);
+      summ = product.price*product.quantity;
+      console.log(summ);
+      return  summ;
+    } 
+  }
+  }
+return  0;
+  // Пиши код выше этой строки
+}
+calculateTotalPrice('Бластер');
+calculateTotalPrice('Радар');
+calculateTotalPrice('Дроид');
+calculateTotalPrice('Захват');
+calculateTotalPrice('Сканер');*/
+
+
+
+
+
+
+
+// Образец
+/*const books = [
+  {
+    title: 'Последнее королевство',
+    author: 'Бернард Корнуэлл',
+    rating: 8.38,
+  },
+  {
+    title: 'На берегу спокойных вод',
+    author: 'Роберт Шекли',
+    rating: 8.51,
+  },
+];
+
+for (const book of books) {
+  console.log(book.title);
+  console.log(book.author);
+  console.log(book.rating);
+}*/
+
+
+
+
+// Образец 2
+/*const books = [
+  {
+    title: 'Последнее королевство',
+    author: 'Бернард Корнуэлл',
+    rating: 8.38,
+  },
+  {
+    title: 'На берегу спокойных вод',
+    author: 'Роберт Шекли',
+    rating: 8.51,
+  },
+];
+
+for (const book of books) {
+  const { title, author, rating } = book;
+
+  console.log(title);
+  console.log(author);
+  console.log(rating);
+}*/
+
+
+
+
+// Образец 3
+/*const books = [
+  {
+    title: 'Последнее королевство',
+    author: 'Бернард Корнуэлл',
+    rating: 8.38,
+  },
+  {
+    title: 'На берегу спокойных вод',
+    author: 'Роберт Шекли',
+    rating: 8.51,
+  },
+];
+for (const { title, author, rating } of books) {
+  console.log(title);
+  console.log(author);
+  console.log(rating);
+}*/
+
+
+
+
+// Задача 24 модуль 3  Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта
+/*const colors = [
+  { hex: '#f44336', rgb: '244,67,54' },
+  { hex: '#2196f3', rgb: '33,150,243' },
+  { hex: '#4caf50', rgb: '76,175,80' },
+  { hex: '#ffeb3b', rgb: '255,235,59' },
+];
+
+const hexColors = [];
+const rgbColors = [];
+// Пиши код ниже этой строки
+
+for (const { hex, rgb } of colors) {
+
+  hexColors.push(hex);
+  console.log(hexColors);
+  rgbColors.push(rgb);
+  console.log(rgbColors);
+}*/
+
+
+
+
+
+
+//Глубокая деструктуризация Образец
+/*const user = {
+  name: 'Jacques Gluke',
+  tag: 'jgluke',
+  stats: {
+    followers: 5603,
+    views: 4827,
+    likes: 1308,
+  },
+};
+
+const {
+  name,
+  tag,
+  stats: { followers, views: userViews, likes: userLikes = 0 },
+} = user;
+
+console.log(name); // Jacques Gluke
+console.log(tag); // jgluke
+console.log(followers); // 5603
+console.log(userViews); // 4827
+console.log(userLikes); // 1308*/
+
+
+
+
+
+// Задача 25 модуль 3 Мы получили прогноз погоды на два дня, с минимальными и максимальными температурами, а также необязательными иконками.
+ //Замени объявления всех переменных одной операцией деструктуризации свойств объекта forecast. Задай значение по умолчанию для иконок, 
+// переменных todayIcon и tomorrowIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+/*const forecast = {
+  today: {
+    low: 28,
+    high: 32,
+    icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
+  },
+  tomorrow: {
+    low: 27,
+    high: 31,
+  },
+};
+// Пиши код ниже этой строки
+const {today: {low: lowToday, high: highToday, icon: todayIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'}, 
+tomorrow: {high: highTomorrow, low: lowTomorrow, icon: tomorrowIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'},} = forecast;
+
+//const highToday = forecast.today.high;
+//const lowToday = forecast.today.low;
+//const todayIcon = forecast.today.icon;
+
+//const highTomorrow = forecast.tomorrow.high;
+//const lowTomorrow = forecast.tomorrow.low;
+//const tomorrowIcon = forecast.tomorrow.icon;
+
+console.log(highToday);
+console.log(lowToday);
+console.log(todayIcon);
+console.log(highTomorrow);
+console.log(lowTomorrow);
+console.log(tomorrowIcon);*/
 
 
 
