@@ -2540,5 +2540,110 @@ console.log(tomorrowIcon);*/
 
 
 
+// Задача 30 модуль 3  Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
+/*function makeTask(data) {
+
+  const completed = false;
+  const category = 'Общее';
+  const priority = 'Обычный';
+  // Пиши код ниже этой строки
+  
+const secondData = { category, priority, ...data,  completed, };
+console.log(secondData);
+return secondData;
+  // Пиши код выше этой строки
+}
+makeTask({});
+makeTask({ category: 'Домашнее', priority: 'Низкий', text: 'Вынести мусор' });
+makeTask({ category: 'Финансы', text: 'Забрать проценты' });
+makeTask({ priority: 'Низкий', text: 'Выбрать шампунь' });
+makeTask({ text: 'Купить хлеб' }); */
 
 
+
+
+
+//Операция ...rest для сбора всех аргументов функции
+
+/*function multiply(...args) {
+  console.log(args); // массив всех аргументов
+}
+multiply(1, 2, 5);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);*/
+
+
+
+
+
+// Задача 31 модуль 3   Используя операцию rest дополни код функции add() так, чтобы она принимала любое 
+// количество аргументов, считала и возвращала их сумму.
+/*function add(...args) {
+  
+  let total = 0;
+  for (const arg of args) {
+    total += arg;
+    console.log(total);
+  }
+  return total;
+  // Пиши код выше этой строки
+}
+add(15, 27);
+add(12, 4, 11, 48);
+add(32, 6, 13, 19, 8);
+add(74, 11, 62, 46, 12, 36);*/
+
+
+
+
+
+// Образец
+/*function multiply(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber); // Значение первого аргумента
+  console.log(secondNumber); // Значение второго аргумента
+  console.log(otherArgs); // Массив остальных аргументов
+}
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);*/
+
+
+
+
+// Задача 32 модуль 3   Функция addOverNum() считает сумму всех аргументов. Измени параметры и тело функции addOverNum() так, чтобы она 
+//считала сумму только тех аргументов, которые больше чем заданное число. Это число должно быть первым параметром функции.
+
+// Пиши код ниже этой строки
+/*function addOverNum(firstNumber,...args) {
+  let total = 0;
+  for (const arg of args) {
+    if (arg > firstNumber) {
+    total += arg;
+    console.log(total);
+  }
+  }
+  return total;
+  // Пиши код выше этой строки
+}
+addOverNum(50, 15, 27);
+addOverNum(10, 12, 4, 11, 48, 10, 8);
+addOverNum(15, 32, 6, 13, 19, 8);
+addOverNum(20, 74, 11, 62, 46, 12, 36);*/
+
+
+
+
+
+
+// Задача 33 модуль 3 
+// Пиши код ниже этой строки
+function findMatches() {
+  const matches = []; // Не изменяй эту строку
+
+  // Пиши код выше этой строки
+  return matches;
+}
+findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7);
+findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2);
+findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41);
+findMatches([63, 11, 8, 29], 4, 7, 16);
