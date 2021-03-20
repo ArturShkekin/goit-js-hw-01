@@ -2635,15 +2635,143 @@ addOverNum(20, 74, 11, 62, 46, 12, 36);*/
 
 
 
-// Задача 33 модуль 3 
+// Задача 33 модуль 3  Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, 
+//а остальные аргументы будут просто числами.
+//Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые 
+//есть в массиве первого аргумента.
+//Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив [1, 2], потому что только они есть в массиве первого аргумента.
 // Пиши код ниже этой строки
-function findMatches() {
+/*function findMatches(firstElement, ...args) {
   const matches = []; // Не изменяй эту строку
-
+for (const arg of args) {
+  if (firstElement.includes(arg)) {
+    matches.push(arg);
+    console.log(matches);
+  }
+}
   // Пиши код выше этой строки
   return matches;
 }
 findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7);
 findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2);
 findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41);
-findMatches([63, 11, 8, 29], 4, 7, 16);
+findMatches([63, 11, 8, 29], 4, 7, 16);*/
+
+
+
+
+// Образец  Методы объекта  Модели
+// ✅ Логиески и синтаксически сгруппированные сущности
+/*const bookShelf = {
+books: ['Последнее королевство', 'Страж снов'],
+  // Это метод объекта
+  getBooks() {
+    console.log('Этот метод будет возвращать все книги - свойство books');
+  },
+  // Это метод объекта
+  addBook(bookName) {
+    console.log('Этот метод будет добавлять новую книгу в свойство books');
+  },
+};
+
+// Вызовы методов
+bookShelf.getBooks();
+bookShelf.addBook('Новая книга');*/
+
+
+
+
+
+
+// Задача 34 модуль 3   Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks()
+ //и addBook(bookName).
+//Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку 'Удаляем книгу <имя книги>', где <имя книги> это значение параметра bookName.
+//Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку 'Обновляем книгу <старое имя> на <новое имя>', где <старое 
+//имя> и <новое имя>это значения параметров oldName и newName соотвественно.
+
+
+/*const bookShelf = {
+  // Пиши код ниже этой строки
+  books: ['Последнее королевство', 'Страж снов'],
+  getBooks() {
+    return 'Возвращаем все книги';
+  },
+  addBook(bookName) {
+    return `Добавляем книгу ${bookName}`;
+  },
+  removeBook(bookName) {
+    return `Удаляем книгу ${bookName}`;
+  },
+  updateBook(oldName, newName) {
+    return `Обновляем книгу ${oldName} на ${newName}`;
+  }
+
+  // Пиши код выше этой строки
+};
+bookShelf.getBooks();
+bookShelf.removeBook();
+bookShelf.updateBook('Пески Дюны', 'Дюна');*/
+
+
+
+
+
+
+//ОБразец
+/*const bookShelf = {
+  books: ['Последнее королевство'],
+  getBooks() {
+    console.log(this);
+  },
+};
+// Перед точкой стоит объект bookShelf,
+// поэтому при вызове метода, this будет хранить ссылку на него.
+bookShelf.getBooks(); // {books: ['Последнее королевство'], getBooks: f}*/
+
+
+
+/*const bookShelf = {
+  books: ['Последнее королевство'],
+  getBooks() {
+    return this.books;
+  },
+  addBook(bookName) {
+    this.books.push(bookName);
+  },
+  removeBook(bookName) {
+    const bookIndex = this.books.indexOf(bookName);
+    this.books.splice(bookIndex, 1);
+  },
+};
+console.log(bookShelf.getBooks()); // []
+bookShelf.addBook('Мгла');
+bookShelf.addBook('Страж снов');
+console.log(bookShelf.getBooks()); // ['Последнее королевство', 'Мгла', 'Страж снов']
+bookShelf.removeBook('Мгла');
+console.log(bookShelf.getBooks()); // ['Последнее королевство', 'Страж снов'];*/
+
+
+
+
+
+// Задача 34 модуль 3 Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. 
+//Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент.
+
+const bookShelf = {
+  books: ['Последнее королевство', 'Мгла', 'Страж снов'],
+  updateBook(oldName, newName) {
+    // Пиши код ниже этой строки
+      const bookIndex = this.books.indexOf(oldName);
+      this.books.splice(bookIndex, 1);
+    
+    
+      this.books.push(bookIndex, 1);
+    
+    
+	
+	
+    // Пиши код выше этой строки
+  },
+};
+bookShelf.updateBook('Мгла', 'Хроники подземелий'); //['Последнее королевство', 'Хроники подземелий', 'Страж снов']
+bookShelf.updateBook('Последнее королевство', 'Дюна');//['Дюна', 'Мгла', 'Страж снов']
