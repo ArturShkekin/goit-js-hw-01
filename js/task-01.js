@@ -2998,7 +2998,7 @@ function onOrderError(error) {
 
 
 
-// Задача 7 модуль 4 
+// Задача 7 модуль 4 метод map
 //Сервису приготовления и доставки еды требуется функция генерации сообщений о статусе заказа.
 //Дополни функцию composeMessage(position) так, чтобы она возвращала строку в формате 'Готовим <блюдо> для <почта>. Ваш заказ <позиция>-й в очереди.'
 // Позиция это значение параметра position - позиция элемента в массиве (на единицу больше чем индекс).
@@ -3029,14 +3029,19 @@ console.log(messages);*/
   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
 }
 
-const messages = orders.map((order, index) => composeMessage.call(order, index + 1));*/
+const messages = orders.map((order, index) => composeMessage.call(order, index + 1));
+console.log(messages);*/
 
 
 
 
 
-// Задача 8 модуль 4 
+
+
+
+// Задача 8 модуль 4 метод map плюс метод call меняем на apply
 // Выполни рефакторинг кода так, чтобы функция composeMessage(position) вызывалась методом apply.
+
 /*const orders = [
   { email: 'solomon@topmail.ua', dish: 'Burger' },
   { email: 'artemis@coldmail.net', dish: 'Pizza' },
@@ -3057,6 +3062,145 @@ const messages = orders.map((order, index) =>
 
 
 
+
+// Образец работы с BIND
+
+/*function greet(clientName) {
+  return `${clientName}, добро пожаловать в «${this.service}».`;
+}
+
+const steam = { service: 'Steam' };
+const steamGreeter = greet.bind(steam);
+steamGreeter('Манго'); // "Манго, добро пожаловать в «Steam»."
+
+const gmail = { service: 'Gmail' };
+const gmailGreeter = greet.bind(gmail);
+gmailGreeter('Поли'); // "Поли, добро пожаловать в «Gmail»."*/
+
+
+
+// Задача 9 модуль 4 метод BIND
+// Функция composeMessage(customerName) создаёт приветственные сообщения для ресторанов. Дополни код так, чтобы в переменных pizzaPalaceComposer
+// и burgerShackComposer были её копии с привязанным контекстом к соответствующим объектам.
+//Объявлена переменная pizzaPalace.
+//Значение переменной pizzaPalace это исходный объект.
+//Объявлена переменная burgerShack.
+//Значение переменной burgerShack это исходный объект.
+//Объявлена функция composeMessage(customerName).
+//Объявлена переменная pizzaPalaceComposer.
+//Значение переменной pizzaPalaceComposer это копия функции composeMessage с контекстом привязанным к объекту pizzaPalace.
+//Объявлена переменная pizzaPalaceMessage.
+//Значение переменной pizzaPalaceMessage это строка 'Манго, всегда рады вас видеть в «Pizza Palace».'.
+//Объявлена переменная burgerShackComposer.
+// Значение переменной burgerShackComposer это копия функции composeMessage с контекстом привязанным к объекту burgerShack.
+// Объявлена переменная burgerShackMessage.
+// Значение переменной burgerShackMessage это строка 'Поли, всегда рады вас видеть в «Burger Shack».'.
+
+
+/*const pizzaPalace = {
+  company: 'Pizza Palace',
+};
+const burgerShack = {
+  company: 'Burger Shack',
+};
+function composeMessage(customerName) {
+  return `${customerName}, всегда рады вас видеть в «${this.company}».`;
+}
+// Пиши код ниже этой строки
+const pizzaPalaceComposer = composeMessage.bind(pizzaPalace);
+const pizzaPalaceMessage = pizzaPalaceComposer('Манго');
+console.log(pizzaPalaceMessage); - короткий вариант
+//console.log(composeMessage.bind(pizzaPalace)('Манго')); - длинный вариант
+const burgerShackComposer = composeMessage.bind(burgerShack);
+const burgerShackMessage = burgerShackComposer('Поли');
+console.log(burgerShackMessage);*/
+
+
+
+
+
+
+// Метод bind и методы объекта
+// В строгом режиме, значение this , при вызове как колбэк-функции callback(), будет undefined. не работает
+// Образец
+/*const customer = {
+  firstName: 'Jacob',
+  lastName: 'Mercer',
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function makeMessage(callback) {
+  // callback() это вызов метода getFullName без объекта
+  console.log(`Обрабатываем заявку от ${callback()}.`);
+}
+
+makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+makeMessage(customer.getFullName.bind(customer)); //- этот метод работает*/
+
+// Задача 10 модуль 4
+//Сервису рассылки электронной почты необходимо добавить логирование действий для сбора статистики. Функция logAndInvokeAction(email, action) 
+//ожидает почту и действие которое нужно выполнить - ссылку на метод объекта service. Сбор статистики симулируется логированием строки. 
+//Разберись и дополни код так, чтобы он работал верно.
+
+//Объявлена переменная service.
+//Значение переменной service это оригинальный объект.
+//Объявлена функция logAndInvokeAction(email, action).
+//Переменной firstInvoke присвоена строка 'Почта kiwi@mail.uk добавлена в рассылку.'.
+//Первый вызов logAndInvokeAction с почтой kiwi@mail.uk и методом service.subscribe привязан к объекту service.
+//Переменной secondInvoke присвоена строка 'Почта poly@hotmail.de удалена из рассылки.'.
+//Второй вызов logAndInvokeAction с почтой poly@hotmail.de и методом service.unsubscribe привязан к объекту service.
+
+/*const service = {
+  mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
+  subscribe(email) {
+    this.mailingList.push(email);
+    return `Почта ${email} добавлена в рассылку.`;
+  },
+  unsubscribe(email) {
+    this.mailingList = this.mailingList.filter((e) => e !== email);
+    return `Почта ${email} удалена из рассылки.`;
+  },
+};
+function logAndInvokeAction(email, action) {
+  console.log(`Выполняем действие с ${email}.`);
+  return action(email);
+}
+const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe.bind(service)); // - добавил здесь.bind(service)
+console.log(firstInvoke);
+// Почта kiwi@mail.uk добавлена в рассылку.
+console.log(service.mailingList);*/
+/* ['mango@mail.com', 
+    'poly@hotmail.de', 
+    'ajax@jmail.net', 
+    'kiwi@mail.uk']*/
+/*const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service));// - добавил здесь.bind(service)
+console.log(secondInvoke);
+// Почта poly@hotmail.de удалена из рассылки.
+console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']*/
+
+
+
+
+
+// Метод MAP служит для уменьшения синтаксиса в коде при работе с массивами
+/*let a = [2, 5 , 11];
+let b = [];
+a[7] = 9;
+delete a[8];
+// надо умножить все на 2
+for (let i = 0; i < a.length; i ++) {
+  b[i] = a[i]*2
+}
+console.log(a);
+console.log(b);
+// let b = a.map(function(currentValue, index, array) { return tralala;});
+//
+let c = a.map(function(x,y,z){
+  return x*8;
+});
+console.log(c);*/
 
 
 
