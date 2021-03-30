@@ -3204,3 +3204,441 @@ console.log(c);*/
 
 
 
+
+
+// Вариант 1
+/*const baseSalary = 30000;
+const overtime = 10;
+const rate = 20;
+
+const  getWage = (baseSalary, overtime, rate) => {
+  return baseSalary + overtime * rate;
+  
+};
+
+getWage(baseSalary, overtime, rate);
+
+// Вариант 2   // Этод вариант лучше. При таком подходе у метода нету параметров, используются свойства объекта, которые настраиваются
+  // при создании объекта и, возможно, так же изменяются другими методами. На выходе имеем сущность с простым интерфейсом, что понижает сложность 
+   //программы и повышает повторное использование кода в других частях программы.
+const employee = {  
+  baseSalary: 30000,
+  overtime: 10,
+  rate: 20,
+  getWage() {
+    return this.baseSalary + this.overtime * this.rate;
+  },
+};
+
+employee.getWage();*/
+
+
+// Конструктор называется с большой буквы
+/*const Hotel = function (name, stars, capacity) {
+  this.name = name;
+  this.stars = stars;
+  this.capacity = capacity;
+};
+
+const hotel = new Hotel('Resort Hotel', 5, 100);
+console.log(hotel);
+// Hotel {name: "Resort Hotel", stars: 5, capacity: 100}
+
+const motel = new Hotel('Sunlight Motel', 4, 300);
+console.log(motel);
+// Hotel {name: "Sunlight Motel", stars: 4, capacity: 300}*/
+
+
+
+
+//3. Добавление методов 
+/*const Hotel = function (name, stars, capacity) {
+  this.name = name;
+  this.stars = stars;
+  this.capacity = capacity;
+  this.guestCount = 0;
+
+  this.greet = function (guestName) {
+    console.log(`Hello ${guestName}, wellcome to ${this.name}`);
+  };
+
+  this.addGuests = function (amount) {
+    console.log(amount);
+    this.guestCount += amount;
+    console.log(this.guestCount);
+  };
+
+  this.removeGuests = function (amount) {
+    console.log(amount);
+    this.guestCount -= amount;
+    console.log(this.guestCount);
+  };
+};
+
+const hotel = new Hotel('Sunrise Hotel', 5, 100);
+
+console.log(hotel);
+// Hotel {name: "Sunrise Hotel", greet: ƒ, addGuests: f, removeGuests: f}
+hotel.greet('Mango'); // Hello Mango, wellcome to Sunrise Hotel
+hotel.addGuests(50);
+hotel.removeGuests(50);*/
+
+
+
+
+/*const Guest = function (name, room) {
+  this.name = name;
+  this.room = room;
+};
+
+const mango = new Guest('Mango', 28);
+
+console.log(mango);*/
+
+
+/*const Hero = function (name, xp) {
+  this.name = name;
+  this.xp = xp;
+};*/
+
+/*
+ * Теперь у нас есть конструктор базового класса героя,
+ * добавим в prototype какой-то метод.
+ */
+/*Hero.prototype.gainXp = function (amount) {
+  console.log(`${this.name} gained ${amount} experience points`);
+  this.xp += amount;
+};
+
+const mango = new Hero('Mango', 1000);
+console.log(mango); // Hero { name: 'Mango', xp: 1000 }
+
+// Так как mango это экземпляр Hero, то ему доступны методы из Hero.prototype
+mango.gainXp(500); // Mango gained 500 experience points
+console.log(mango); // Hero { name: 'Mango', xp: 1500 }*/
+
+/*const Hero = function (name, xp) {
+  this.name = name;
+  this.xp = xp;
+};
+
+const Warrior = function (name, xp, weapon) {*/
+  /*
+   * Во время выполнения функции Warrior вызываем функцию Hero
+   * в контексте объекта создающегося в Warrior, а так же передаем
+   * аргументы для инициализации полей this.name и this.xp
+   *
+   * this это будущий экземпляр Warrior
+   */
+  /*Hero.call(this, name, xp);
+
+  // Тут добавляем новое свойство - оружие
+  this.weapon = weapon;
+};
+
+// Сразу добавим метод для атаки в prototype воина
+Warrior.prototype.attack = function () {
+  console.log(`${this.name} attacks with ${this.weapon}`);
+};
+
+const poly = new Warrior('Poly', 200, 'sword');
+
+console.log(poly); // Warrior {name: "Poly", xp: 200, weapon: "sword"}
+poly.attack(); // Poly attacks with sword*/
+
+
+// Полный код примера.
+/*const Hero = function (name, xp) {
+  this.name = name;
+  this.xp = xp;
+};
+
+Hero.prototype.gainXp = function (amount) {
+  console.log(`${this.name} gained ${amount} experience points`);
+  this.xp += amount;
+};
+
+const Warrior = function (name, xp, weapon) {
+  Hero.call(this, name, xp);
+
+  this.weapon = weapon;
+};
+
+Warrior.prototype = Object.create(Hero.prototype);
+Warrior.prototype.constructor = Warrior;
+
+Warrior.prototype.attack = function () {
+  console.log(`${this.name} attacks with ${this.weapon}`);
+};
+
+const poly = new Warrior('Poly', 200, 'sword');*/
+
+
+
+// Образец  Прототип объекта и метод Object.create()
+
+/*const animal = {
+  legs: 4
+};
+const dog = Object.create(animal);
+dog.name = 'Манго';
+
+console.log(dog); // { name: 'Манго', __proto__: animal }
+console.log(animal.isPrototypeOf(dog)); // true
+
+console.log(dog.hasOwnProperty('name')); // true
+console.log(dog.name); // 'Манго'
+
+console.log(dog.hasOwnProperty('legs')); // false
+console.log(dog.legs); // 4*/
+
+
+
+
+
+
+
+// Задача 1 модуль 5
+
+//Измени код так, чтобы объект parent стал прототипом для объекта в переменной сhild.
+
+/*const parent = {
+  name: 'Stacey',
+  surname: 'Moore',
+  age: 54,
+  heritage: 'Irish'
+};
+// Пиши код ниже этой строки
+
+const child = Object.create(parent);// это все что надо сделать
+
+// Пиши код выше этой строки
+child.name = 'Jason';
+child.age = 27;*/
+
+
+
+
+// Задача 2 модуль 5
+// Измени код, построив цепочку прототипов так, чтобы объект ancestor был прототипом для parent, а тот в свою очередь был прототипом для child.
+
+/*const ancestor = {
+  name: 'Paul',
+  age: 83,
+  surname: 'Dawson',
+  heritage: 'Irish'
+};
+// Пиши код ниже этой строки
+
+const parent = Object.create(ancestor); // это все что надо сделать
+parent.name = 'Stacey';
+parent.surname = 'Moore';
+parent.age = 54;
+
+const child = Object.create(parent); // это все что надо сделать
+child.name = 'Jason';
+child.age = 27;
+
+// Пиши код выше этой строки*/
+
+
+
+// Функция-конструктор
+// Синтаксис литерала объекта позволяет создать один объект. Но часто нужно создать много однотипных объектов с одинаковым набором свойств, 
+//но разными значениями, и методами для взаимодействия со свойствами. Всё это нужно сделать динамически, во время выполнения программы. 
+//Для этого используют функции-конструкторы, вызывая их при помощи специального оператора new.
+
+// Образец
+/*function User() {
+  // Тело функции
+}
+
+const mango = new User();
+console.log(mango); // {}
+
+const poly = new User();
+console.log(poly); // {}*/
+
+// Образец
+/*function User(name, email, age) {
+  this.name = name;
+  this.email = email;
+}
+
+const mango = new User('Манго', 'mango@mail.com');
+console.log(mango); // { name: 'Манго', email: 'mango@mail.com' }
+
+const poly = new User('Поли', 'poly@mail.com');
+console.log(poly); // { name: 'Поли', email: 'poly@mail.com' }*/
+
+
+
+
+// Задача 3 модуль 5
+// Объяви функцию-конструктор Car которая принимает три параметра:
+// brand - марка автомобиля.
+// model - модель автомобиля.
+// price - цена автомобиля.
+// Функция Car должна создавать объект с одноимёнными свойствами brand, model и price, значениями которых должны быть переданные аргументы 
+// во время её вызова с оператором new.
+
+/*function Car(brand, model, price) {
+  this.brand = brand;
+  this.model = model;
+  this.price = price;
+}
+
+const audi = new Car('Audi', 'Q3', 36000);
+console.log(audi);
+
+const bmw = new Car('BMW', 'X5', 58900);
+console.log(bmw);
+
+const nissan = new Car('Nissan', 'Murano', 31700);
+console.log(nissan);*/
+
+
+
+// Объект настроек
+// Функции-конструкторы всегда принимают большое количество входных данных для свойств будущего объекта. Поэтому, к ним также можно применить
+// паттерн «Объект настроек», передавая один объект с логично именованными свойствами, вместо несвязанного набора аргументов.
+// Образец
+/*function User({ name, email }) {
+  this.name = name;
+  this.email = email;
+}
+
+const mango = new User({ name: 'Манго', email: 'mango@mail.com' });
+const poly = new User({ name: 'Поли', email: 'poly@mail.com' });*/
+
+
+
+
+// Задача 4 модуль 5
+
+// Выполни рефакторинг функции-конструктора Car так, чтобы она принимала один параметр - объект со свойсвами brand, model и price. 
+// Деструктуризируй объект в сигнатуре (подписи) функции.
+
+
+/*function Car({brand, model, price}) { // Добавил фигурные скобки и все
+  this.brand = brand;
+  this.model = model;
+  this.price = price;
+}*/
+
+
+
+
+// Свойство prototype
+// Мы уже знаем что такое прототип объекта, свойство __proto__ и как происходит поиск отсутствующих свойств объекта по цепочке прототипов.
+// Во время вызова функции-конструктора через new и создания нового объекта со свойствами, ему также устанавливается прототип.
+// У каждой функции, кроме стрелочных, есть свойство prototype, значение которого это объект с единственным свойством constructor, указывающим 
+// на саму функцию-конструктор.
+
+/*function User() {}
+console.log(User.prototype); // { constructor: User }
+//При вызове функции-конструктора и создании объекта через new, объект в свойстве prototype функции-конструктора будет прототипом создаваемого объекта.
+const mango = new User();
+console.log(User.prototype.isPrototypeOf(mango)); // true
+// В свойство prototype можно записывать свойства и методы, которые будут доступны всем объектам созданным этой функцией-конструктором. 
+// Методы в prototype будут вызываться объектами созданными функцией-конструктором, поэтому для доступа к свойствам вызываемого объекта в методах
+// используется ключевое слово this.*/
+
+
+// Образец
+/*function User({ name, email }) {
+  this.name = name;
+  this.email = email;
+}
+
+User.prototype.getEmail = function () {
+  return this.email;
+};
+
+User.prototype.changeEmail = function (newEmail) {
+  this.email = newEmail;
+};
+
+const mango = new User({ name: 'Манго', email: 'mango@mail.com' });
+
+console.log(mango.getEmail()); // mango@mail.com
+mango.changeEmail('mango@supermail.com');
+console.log(mango.getEmail()); // mango@supermail.com*/
+
+// Задача 5 модуль 5
+// Добавь в свойство prototype функции-конструктора Car два метода:
+// getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
+// changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
+// У объекта, созданного вызовом new Car({ brand: 'Audi', model: 'Q3', price: 36000 }), вызов метода getPrice() вернет число 36000.
+// У объекта, созданного вызовом new Car({ brand: 'Audi', model: 'Q3', price: 36000 }), вызов метода changePrice(35000) и 
+// последующем вызове getPrice() вернет число 35000.
+//Car.prototype.hasOwnProperty('getPrice'); //возвращает true.
+//Car.prototype.hasOwnProperty('changePrice'); //возвращает true.
+
+
+/*function Car({ brand, model, price }) {
+  this.brand = brand;
+  this.model = model;
+  this.price = price;
+}
+
+Car.prototype.getPrice = function() {
+return this.price;
+};
+
+Car.prototype.changePrice = function(newPrice) {
+this.price = newPrice;
+};
+
+const audi = new Car({ brand: 'Audi', model: 'Q3', price: 36000 });
+
+console.log(audi.getPrice());
+audi.changePrice(35000);
+console.log(audi.getPrice());*/
+
+
+
+
+
+
+// Задача 6 модуль 5
+// С помощью Function Declaration напиши функцию-конструктор Storage, которая будет создавать объекты для управления складом товаров. 
+// Функция ожидает только один аргумент - начальный массив товаров, который записывается на создаваемый объект в свойство items.
+// Добавь методы на прототип:
+
+//getItems() - возвращает массив текущих товаров в свойстве items объекта, который вызывает этот метод.
+//addItem(newItem) - принимает новый товар newItem и добавляет его в массив товаров в свойстве items объекта, который вызывает этот метод.
+//removeItem(item) - принимает товар item и удаляет его из массива товаров в свойстве items объекта, который вызывает этот метод.
+//Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+
+/*function Storage(items) {
+  this.items = items;
+}
+
+Storage.prototype.getItems = function() {
+  return this.items;
+};
+
+Storage.prototype.addItem = function(newItem) {
+this.items.push(newItem);
+};
+
+Storage.prototype.removeItem = function(item) {
+  for (let i = 0; i < this.items.length; i += 1) {
+    if (item === this.items[i]) {
+     const itemIndex = this.items.indexOf(this.items[i]);
+      this.items.splice(itemIndex, 1);
+    }
+  }
+};
+// Пиши код выше этой строки
+const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
+console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+storage.addItem('Дроид');
+console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+storage.removeItem('Пролонгер');
+console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]*/
+
+
+
