@@ -3691,3 +3691,166 @@ console.log(builder.getValue()); // '=^.^='*/
 
 
 
+// Задача 9 модуль 5
+// Выполни рефакторинг кода, заменив функцию-конструктор Car на класс с методом-конструктором, принимающим объект.
+
+/*class Car {
+  constructor ({brand, model, price}) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+}
+new Car({ brand: 'Audi', model: 'Q3', price: 36000 });
+new Car({ brand: 'BMW', model: 'X5', price: 58900 });
+new Car({ brand: 'Nissan', model: 'Murano', price: 31700 });*/
+
+
+
+
+// Задача 10 модуль 5
+// Добавь классу Car две метода.
+
+// getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
+// changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
+
+/*class Car {
+  constructor({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  getPrice(){
+  return this.price;
+  }
+  changePrice(newPrice){
+  this.price = newPrice;
+  }
+}
+new Car({ brand: 'Audi', model: 'Q3', price: 36000 });*/
+
+
+
+
+
+// Приватные свойства
+// Инкапсуляция - это концепция позволяющая скрыть внутренние детали класса. Пользователь класса должен получать доступ только к публичному 
+// интерфейсу - набору публичных свойств и методов класса.
+// В классах инкапсуляция реализуется приватными свойствами, доступ к которым можно получить только внутри класса. Это одно из отличий классов 
+// и функций-конструкторов - в классах легко объявить приватные свойства.
+// Допустим почта пользователя должна быть недоступна из вне, то есть приватна. Добавляя к имени свойства символ # мы делаем его приватным.
+// Объявление приватного свойства до инциализации в конструкторе - обязательно.
+
+// Методы класса также могут быть приватными, то есть доступны только в теле класса. Для этого перед их именем необходимо поставить символ #.
+
+/*class User {
+  // Необязательное объявление публичных свойств
+  name;
+  // Обязательное объявление приватных свойств
+  #email;
+
+  constructor({ name, email }) {
+    this.name = name;
+    this.#email = email;
+  }
+
+  getEmail() {
+    return this.#email;
+  }
+
+  changeEmail(newEmail) {
+    this.#email = newEmail;
+  }
+}
+
+const mango = new User({ name: 'Манго', email: 'mango@mail.com' });
+
+mango.changeEmail('mango@supermail.com');
+console.log(mango.getEmail()); // mango@supermail.com
+console.log(mango.#email); // Будет ошибка, это приватное свойство*/
+
+
+
+// Задача 11 модуль 5
+// Выполни рефакторинг класса Car так, чтобы свойство brand было приватным и добавь два метода для публичного интерфейса, для чтения 
+// и изменения этого свойства.
+
+// getBrand() - возвращает значение приватного свойства brand.
+// changeBrand(newBrand) - изменяет значение приватного свойства brand на newBrand.
+
+/*class Car {
+
+  #brand; // добавил
+
+  constructor({ brand, model, price }) {
+    this.#brand = brand; // добавил 
+    this.model = model;
+    this.price = price;
+  }
+
+  getBrand() { // добавил
+    return this.#brand;
+  }
+
+  changeBrand(newBrand) { // добавил
+    this.#brand = newBrand;
+  }
+}*/
+
+
+
+// Задача 12 модуль 5
+
+// Выполни рефакторинг заменив функцию-конструктор Storage на класс с методами. Сделай так, чтобы свойство items было приватным.
+
+/*function Storage(items) { // это убрать и вставить код снизу
+  this.items = items;
+}
+
+Storage.prototype.getItems = function () {
+  return this.items;
+};
+
+Storage.prototype.addItem = function (addItem) {
+  this.items.push(newItem);
+};
+
+Storage.prototype.removeItem = function (item) {
+  const itemIndex = this.items.indexOf(item);
+  this.items.splice(itemIndex, 1);
+};
+
+
+
+class Storage {  //Это код по схеме класса
+
+ #items;
+
+ constructor(items) {
+   this.#items = items;
+ }
+ getItems() {
+return this.#items;
+ }
+ addItem(newItem) {
+  this.#items.push(newItem);
+ }
+ removeItem(item) {
+  const itemIndex = this.#items.indexOf(item);
+  this.#items.splice(itemIndex, 1);
+ }
+
+}
+
+// Пиши код выше этой строки
+const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+storage.addItem("Дроид");
+console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+storage.removeItem("Пролонгер");
+console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]*/
+
+
+
+
+
