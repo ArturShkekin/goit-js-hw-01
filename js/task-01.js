@@ -4425,3 +4425,234 @@ console.log(mango.isBlacklisted('poly@mail.com')); // true */
 
 
 
+
+
+// Метод forEach(callback)
+// Перебирающий метод массива, который используется как замена циклов for и for...of при работе с коллекцией
+
+//массив.forEach(function callback(element, index, array) {
+  // Тело коллбек-функции
+// });
+
+// Поэлементно перебирает массив.
+// Вызывает коллбек-функцию для каждого элемента массива.
+// Ничего не возвращает.
+// Аргументы коллбек-функции это значение текущего элемента element, его индекс index и сам исходный массив array. Объявлять можно только те 
+// параметры которые нужны, чаще всего это элемент, главное не забывать про их порядок.
+
+/*const numbers = [5, 10, 15, 20, 25];
+
+// Классический for
+for (let i = 0; i < numbers.length; i += 1) {
+  console.log(`Индекс ${i}, значение ${numbers[i]}`);
+}
+
+console.log("РАЗДЕЛИТЕЛЬНАЯ ЧЕРТА");
+
+// Перебирающий forEach
+
+numbers.forEach(function (number, index) {
+  console.log(`Индекс ${index}, значение ${number}`);
+});*/
+
+
+
+
+// // Задача 1 модуль 6
+// Функция calculateTotalPrice(orderedItems) принимает один параметр orderedItems - массив чисел, и рассчитывает общую сумму его элементов, 
+// которая сохраняется в переменной totalPrice и возвращается как результат работы функции.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+
+/*function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+  // Пиши код ниже этой строки
+
+  //for (let i = 0; i < orderedItems.length; i += 1) {
+   // totalPrice += orderedItems[i];
+  // }
+
+  orderedItems.forEach(function(orderedItems){ // то что надо было сделать
+    totalPrice += orderedItems;
+  });
+  // Пиши код выше этой строки
+  return totalPrice;
+}
+
+console.log(calculateTotalPrice([12, 85, 37, 4]));
+console.log(calculateTotalPrice([164, 48, 291]));
+console.log(calculateTotalPrice([412, 371, 94, 63, 176]));*/
+
+
+
+
+
+// // Задача 2 модуль 6
+
+// Функция filterArray(numbers, value) принимает массив чисел numbers и возвращает новый массив, в котором будут только те элементы 
+// оригинального массива, которые больше чем значение параметра value.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+
+/*function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Пиши код ниже этой строки
+
+  //for (let i = 0; i < numbers.length; i += 1) {
+   // if (numbers[i] > value) {
+   //   filteredNumbers.push(numbers[i]);
+  //  }
+  //}
+
+ numbers.forEach(function(number) {    // это надо было сделать
+  if(number > value){
+    filteredNumbers.push(number);
+  }
+  });
+  console.log(filteredNumbers);
+  
+
+  // Пиши код выше этой строки
+  return filteredNumbers;
+}
+
+filterArray([1, 2, 3, 4, 5], 3);
+filterArray([1, 2, 3, 4, 5], 4);
+filterArray([1, 2, 3, 4, 5], 5);
+filterArray([12, 24, 8, 41, 76], 38);
+filterArray([12, 24, 8, 41, 76], 20);*/
+
+
+
+
+
+// // Задача 3 модуль 6
+
+// Функция getCommonElements(firstArray, secondArray) принимает два массива произвольной длины в параметры firstArray и secondArray, и 
+// возвращает новый массив их общих элементов, то есть тех которые есть в обоих массивах.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+
+/*function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+  // Пиши код ниже этой строки
+
+  //for (let i = 0; i < firstArray.length; i += 1) {
+  //  if (secondArray.includes(firstArray[i])) {
+  //    commonElements.push(firstArray[i]);
+  //  }
+  //}
+  firstArray.forEach(function(firstArray) { // сделать это
+   if(secondArray.includes(firstArray)) {
+    commonElements.push(firstArray);
+   }
+  });
+  console.log(commonElements);
+
+
+  return commonElements;
+  // Пиши код выше этой строки
+}
+getCommonElements([1, 2, 3], [2, 4]);
+getCommonElements([1, 2, 3], [2, 1, 17, 19]);
+getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]);
+getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]);
+getCommonElements([1, 2, 3], [10, 20, 30]);*/
+
+
+
+
+
+// Стрелочные функции.
+// Стрелочные функции имеют сокращённый, более лаконичный синтаксис, что уменьшает объем кода, особенно когда функция маленькая или если она 
+// используется как коллбек.
+// Все стрелки создаются как функциональное выражение, и если функция не анонимна, то она должна быть присвоена переменной.
+// Ключевое слово function не используется, вместо этого сразу идёт объявление параметров, за которыми следует символ => и тело функции.
+// Если параметров несколько, то они перечисляются через запятую в круглых скобках, между знаками равно = и стрелкой =>.
+
+// Обычное объявление функции
+/*function classicAdd(a, b, c) {
+  return a + b + c;
+}
+
+// Тоже самое как стрелочная функция
+const arrowAdd = (a, b, c) => {
+  return a + b + c;
+};
+
+// Если параметр один, его объявление может быть без круглых скобок.
+const add = (a) => {
+  return a + 5;
+};
+// Если параметров нет, то обязательно должны быть пустые круглые скобки.
+const greet = () => {
+  console.log('Привет!');
+};*/
+
+
+
+
+// // Задача 4 модуль 6
+// Выполни рефакторинг функции calculateTotalPrice() так, чтобы она была объявлена как стрелочная.
+
+// Пиши код ниже этой строки
+
+/*function calculateTotalPrice(quantity, pricePerItem) {  // Простая функция
+  // Пиши код выше этой строки
+  return quantity * pricePerItem;
+}*/
+
+// Пиши код ниже этой строки
+/*const calculateTotalPrice = (quantity, pricePerItem) => {  // Это стрелочная функция
+  // Пиши код выше этой строки
+  console.log(quantity * pricePerItem);
+  return quantity * pricePerItem;
+}
+calculateTotalPrice(5, 100);
+calculateTotalPrice(8, 60);
+calculateTotalPrice(3, 400);*/
+
+
+
+// Неявный возврат
+// В стрелочной функции после символа => идёт её тело. Здесь может быть два варианта: с фигурными скобками и без них.
+/*const add = (a, b, c) => {
+  console.log(a, b, c);
+  return a + b + c;
+};
+// Если фигурные скобки есть, и функция должна возвращать какое-то значение, необходимо явно поставить return. Это называется явный возврат 
+// (explicit return). Такой синтаксис используется в том случае, если в теле функции нужно выполнить ещё какие-то инструкции кроме возврата значения.
+const add = (a, b, c) => a + b + c;
+// Если фигурных скобок нет, то возвращается результат выражения стоящего после =>. Это называется неявный возврат (implicit return).
+//  В примере вернётся результат выражения сложения параметров a, b и c.
+// Синтаксис неявного возврата сильно сокращает «шум» объявления функции с телом и возвращаемым выражением, но подходит только в случае когда в
+// теле функции не нужно выполнять никаких дополнительных инструкций кроме возврата значения.
+
+// До
+function classicAdd(a, b, c) {
+  return a + b + c;
+}
+
+// После
+const arrowAdd = (a, b, c) => a + b + c;*/
+
+
+
+
+
+
+// // Задача 5 модуль 6
+
+// Выполни рефакторинг функции calculateTotalPrice() так, чтобы она использовала неявный возврат.
+
+// Пиши код ниже этой строки
+//const calculateTotalPrice = (quantity, pricePerItem) => { // Явный возврат
+//  return quantity * pricePerItem;
+// };
+// Пиши код выше этой строки
+/*const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;  // Неявный возврат
+
+console.log(calculateTotalPrice(5, 100));
+calculateTotalPrice(8, 60);
+calculateTotalPrice(3, 400);*/
+
+
+
+// Стрелочные функции как коллбеки
