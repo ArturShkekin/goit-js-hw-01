@@ -5015,3 +5015,665 @@ console.log(genres);
 
 
 
+
+// // Задача 13 модуль 6
+// Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name) из массива объектов в параметре users.
+
+// Задача. Имена пользователей
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+/*const users = 
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    skills: ['ipsum', 'lorem'],
+    gender: 'male',
+    age: 37,
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+    gender: 'female',
+    age: 34,
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+    gender: 'male',
+    age: 24,
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    skills: ['adipisicing', 'irure', 'velit'],
+    gender: 'female',
+    age: 21,
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    skills: ['ex', 'culpa', 'nostrud'],
+    gender: 'male',
+    age: 27,
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    skills: ['non', 'amet', 'ipsum'],
+    gender: 'male',
+    age: 38,
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    skills: ['lorem', 'veniam', 'culpa'],
+    gender: 'female',
+    age: 39,
+  },
+];
+
+// Пиши код ниже этой строки
+ const getUserNames = users => users.map(user => user.name); // это считается правильно написанная функция
+
+const getUserNames = users.map(user => user.name);  // а это почему-то работает
+
+console.log(getUserNames);
+// Пиши код выше этой строки*/
+
+
+
+
+
+// // Задача 14 модуль 6
+
+// Задача. Почты пользователей
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email) из массива 
+// объектов в параметре users.
+
+/*const users = 
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    skills: ['ipsum', 'lorem'],
+    gender: 'male',
+    age: 37,
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+    gender: 'female',
+    age: 34,
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+    gender: 'male',
+    age: 24,
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    skills: ['adipisicing', 'irure', 'velit'],
+    gender: 'female',
+    age: 21,
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    skills: ['ex', 'culpa', 'nostrud'],
+    gender: 'male',
+    age: 27,
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    skills: ['non', 'amet', 'ipsum'],
+    gender: 'male',
+    age: 38,
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    skills: ['lorem', 'veniam', 'culpa'],
+    gender: 'female',
+    age: 39,
+  },
+];
+
+// const getUserEmails = users => users.map(user => user.email); // правильно написанная функция
+
+const getUserEmails = users.map(user => user.email);  // А это дает результат в консоль
+console.log(getUserEmails);*/
+
+
+
+// Методы filter и find
+// Метод filter(callback) используется для единственной операции - фильтрации массива, то есть когда необходимо выбрать более одного 
+// элемента из коллекции по какому-то критерию.
+// 
+//массив.filter((element, index, array) => {
+  // Тело коллбек-функции
+//});
+
+/*Не изменяет оригинальный массив.
+Поэлементно перебирает оригинальный массив.
+Возвращает новый массив.
+Добавляет в возвращаемый массив элементы которые удовлетворяют условию коллбек-функции.
+Если коллбек вернул true элемент добавляется в возвращаемый массив.
+Если коллбек вернул false элемент не добавляется в возвращаемый массив.
+Если ни один элемент не удовлетворил условию, возвращает пустой массив.*/
+/*То есть метод filter вызывает коллбек-функцию для каждого элемента исходного массива и если результат её выполнения true, 
+текущий элемент добавляет в новый массив.*/
+
+/*const values = [51, -3, 27, 21, -68, 42, -37];
+
+const positiveValues = values.filter(value => value >= 0);
+console.log(positiveValues); // [51, 27, 21, 42]
+
+const negativeValues = values.filter(value => value < 0);
+console.log(negativeValues); // [-3, -68, -37]
+
+const bigValues = values.filter(value => value > 1000);
+console.log(bigValues); // []
+
+// Оригинальный массив не изменился
+console.log(values); // [51, -3, 27, 21, -68, 42, -37]*/
+
+
+
+
+// // Задача 15 модуль 6
+// Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных. 
+// Обязательно используй метод filter()
+
+/*const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// Пиши код ниже этой строки
+
+const evenNumbers = numbers.filter(number => number % 2 === 0); // Это надо
+console.log(evenNumbers);
+const oddNumbers = numbers.filter(number => number % 2 !== 0);  // Это надо
+console.log(oddNumbers);*/
+
+
+
+
+// Фильтрация уникальных элементов
+
+// Используя метод filter() можно выполнить фильтрацию массива так, что в нём останутся только уникальные элементы. 
+// Этот приём работает только с массивом примитивных значений - не объектов.
+
+// Вернёмся к группе студентов и массиву всех посещаемых предметов, которые мы получили методом flatMap().
+
+/*const students = [
+  { name: 'Манго', courses: ['математика', 'физика'] },
+  { name: 'Поли', courses: ['информатика', 'математика'] },
+  { name: 'Киви', courses: ['физика', 'биология'] }
+];
+
+const allCourses = students.flatMap(student => student.courses);
+// ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
+
+// В переменной allCourses хранится массив всех посещаемых предметов, которые могут повторяться. Задача заключается в том, чтобы сделать новый 
+// массив, в котором будут только уникальные предметы, то есть без повторений.
+
+const uniqueCourses = allCourses.filter(
+  (course, index, array) => array.indexOf(course) === index
+);
+
+console.log(uniqueCourses);*/
+
+// ['математика', 'физика', 'информатика', 'биология'];
+
+// Используя array.indexOf(course) выполняем поиск первого совпадения текущего элемента course и получаем его индекс в оригинальном массиве 
+// всех курсов. В параметре index хранится индекс текущего элемента course при переборе массива методом filter.
+
+// Если результат indexOf() и значение index равны - это уникальный элемент, потому что это первый раз когда такое значение встречается в 
+// массиве и на текущей итерации фильтр обрабатывает именно его.
+
+
+// ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
+/*Для элемента 'математика' под индексом 0:
+
+indexOf() вернёт 0, потому что ищет первое совпадение.
+Значение параметра index будет 0.
+Они равны, значит это уникальный элемент.
+Для элемента 'математика' под индексом 3:
+
+indexOf() вернёт 0, потому что ищет первое совпадение.
+Значение параметра index будет 3.
+Они не равны, значит это повторяющийся - не уникальный элемент.*/
+
+
+
+
+
+// // Задача 16 модуль 6
+
+// Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres
+//  массив уникальных жанров - без повторений.
+
+/*const books = [
+  {
+    title: 'Последнее королевство',
+    author: 'Бернард Корнуэлл',
+    genres: ['приключения', 'историческое']
+  },
+  {
+    title: 'На берегу спокойных вод',
+    author: 'Роберт Шекли',
+    genres: ['фантастика', 'мистика']
+  },
+  {
+    title: 'Красна как кровь',
+    author: 'Ли Танит',
+    genres: ['ужасы', 'мистика', 'приключения']
+  }
+];
+// Пиши код ниже этой строки
+const allGenres = books.flatMap(book => book.genres); // это надо
+console.log(allGenres);
+const uniqueGenres = allGenres.filter((genres,index, array) => array.indexOf(genres) === index); // это надо
+console.log(uniqueGenres);*/
+
+
+
+
+// Метод filter() и массив объектов
+
+// При работе с массивом объектов выполняется фильтрация по значению какого-то свойства. В результате получается новый массив отфильтрованных объектов.
+// Например, есть массив студентов с баллами за тест. Необходимо отфильтровать лучших (балл выше 80), худших (балл ниже 50) и средних студентов 
+// (балл от 50 до 80).
+
+/*const LOW_SCORE = 50;
+const HIGH_SCORE = 80;
+const students = [
+  { name: 'Манго', score: 83 },
+  { name: 'Поли', score: 59 },
+  { name: 'Аякс', score: 37 },
+  { name: 'Киви', score: 94 },
+  { name: 'Хьюстон', score: 64 },
+];
+
+const best = students.filter((student) => student.score >= HIGH_SCORE);
+console.log(best); // Массив объектов с именами Манго и Киви
+
+const worst = students.filter((student) => student.score < LOW_SCORE);
+console.log(worst); // Массив с одним объектом Аякс
+
+// В коллбек-функции удобно деструктуризировать свойства объекта
+const average = students.filter(
+  ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+);
+console.log(average); // Массив объектов с именами Поли и Хьюстон*/
+
+
+
+
+
+// // Задача 17 модуль 6
+
+// Используя метод filter() дополни код так, чтобы:
+
+// В переменной topRatedBooks получился массив книг рейтинг которых (свойство rating) больше либо равно значению переменной MIN_RATING.
+// В переменной booksByAuthor получился массив книг написанных автором с именем (свойство author) которое совпадает со значением в переменной AUTHOR.
+
+/*const books = [
+  { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+  { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+  { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+  { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+  { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+];
+
+const MIN_RATING = 8;
+const AUTHOR = 'Бернард Корнуэлл';
+// Пиши код ниже этой строки
+
+const topRatedBooks = books.filter(book => book.rating >= MIN_RATING); // это надо
+console.log(topRatedBooks);
+const booksByAuthor = books.filter(book => book.author === AUTHOR); // это надо
+console.log(booksByAuthor);*/
+
+
+
+
+// // Задача 18 модуль 6
+// Задача. Пользователи с цветом глаз
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+/*const users = 
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male'
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female'
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male'
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female'
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male'
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male'
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female'
+  }
+];
+
+// Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) 
+// совпадает со значением параметра color.
+
+// Пиши код ниже этой строки
+const getUsersWithEyeColor = (users, color) => users.filter(user => user.eyeColor === color); // это надо было сделать
+ 
+
+
+// Пиши код выше этой строки*/
+
+
+
+
+
+
+
+
+// // Задача 19 модуль 6
+
+// Задача. Пользователи в возрастной категории
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// Дополни функцию getUsersWithAge(users, minAge, maxAge) так, чтобы она возвращала массив пользователей, возраст которых (свойство age) 
+// попадает в промежуток от minAge до maxAge.
+
+/*const users =
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+    age: 37
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+    age: 34
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+    age: 24
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+    age: 21
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+    age: 27
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+    age: 38
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+    age: 39
+  }
+];
+
+// Пиши код ниже этой строки
+const getUsersWithAge = ((users, minAge, maxAge) => users.filter(users => users.age > minAge && users.age < maxAge)); // это надо
+// Пиши код выше этой строки*/
+
+
+
+
+
+// // Задача 20 модуль 6
+
+// Задача. Пользователи с другом
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// Дополни функцию getUsersWithFriend(users, friendName) так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре 
+// friendName. Массив друзей пользователя хранится в свойстве friends.
+
+/*const users =
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+    age: 37
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+    age: 34
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+    age: 24
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+    age: 21
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+    age: 27
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+    age: 38
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+    age: 39
+  }
+];
+
+// Пиши код ниже этой строки
+const getUsersWithFriend = ((users, friendName) => users.filter(user => user.friends.includes(friendName)));  // это надо
+// Пиши код выше этой строки*/
+
+
+
+
+
+
+// // Задача 21 модуль 6
+
+// Задача. Список друзей
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+// Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). У нескольких пользователей 
+// могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
