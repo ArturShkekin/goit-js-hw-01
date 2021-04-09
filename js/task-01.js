@@ -5677,3 +5677,184 @@ const getUsersWithFriend = ((users, friendName) => users.filter(user => user.fri
 // Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
 // Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). У нескольких пользователей 
 // могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
+
+
+// Пиши код ниже этой строки
+/*const getFriends = (users) => users.flatMap((user => user.friends))
+.filter((friends, index, getFriends) => (getFriends.indexOf(friends) === index
+ ));*/
+ 
+// Пиши код выше этой строки
+
+
+
+
+
+// // Задача 22 модуль 6
+
+ // Пиши код ниже этой строки
+// const getActiveUsers = (users) => (users.filter(user => user. isActive === true));
+// Пиши код выше этой строки
+
+
+
+
+
+// // Задача 23 модуль 6
+
+// Пиши код ниже этой строки
+// const getInactiveUsers = (users) => (users.filter(user => user. isActive === false));
+// Пиши код выше этой строки
+
+
+
+
+
+// // Задача 24 модуль 6
+
+/*const books = [
+  { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+  { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+  { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+  { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+ ];
+ const BOOK_TITLE = 'Сон смешного человека';
+ const AUTHOR = 'Роберт Шекли';
+ // Пиши код ниже этой строки
+ 
+ const bookWithTitle = books.find((book) => (book.title === BOOK_TITLE));
+ const bookByAuthor = books.find(book => book.author === AUTHOR); */
+ 
+ 
+
+
+// // Задача 25 модуль 6
+
+// Пиши код ниже этой строки
+// const getUserWithEmail = (users, email) => users.find(user => user.email === email);
+// Пиши код выше этой строки
+
+
+
+
+
+
+// // Задача 26 модуль 6
+
+/*const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Пиши код ниже этой строки
+
+const eachElementInFirstIsEven = firstArray.every(value => value % 2 === 0);
+const eachElementInFirstIsOdd = firstArray.every(value => value % 2 !== 0);
+const eachElementInSecondIsEven = secondArray.every(value => value % 2 === 0);;
+const eachElementInSecondIsOdd = secondArray.every(value => value % 2 !== 0);;
+
+const eachElementInThirdIsEven = thirdArray.every(value => value % 2 === 0);;
+const eachElementInThirdIsOdd = thirdArray.every(value => value % 2 !== 0);;*/
+
+
+
+
+
+// // Задача 27 модуль 6
+
+// Пиши код ниже этой строки
+// const isEveryUserActive = (users) => (users.every(user => user.isActive === true));
+// Пиши код выше этой строки
+
+
+
+
+// // Задача 28 модуль 6
+
+/*const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Пиши код ниже этой строки
+
+const anyElementInFirstIsEven = firstArray.some(value => value % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some(value => value % 2 !== 0);
+
+const anyElementInSecondIsEven = secondArray.some(value => value % 2 === 0);;
+const anyElementInSecondIsOdd = secondArray.some(value => value % 2 !== 0);
+
+const anyElementInThirdIsEven = thirdArray.some(value => value % 2 === 0);;
+const anyElementInThirdIsOdd = thirdArray.some(value => value % 2 !== 0);*/
+
+
+
+
+// // Задача 29 модуль 6
+
+// Пиши код ниже этой строки
+// const isAnyUserActive = users => users.some(user => user.isActive === true);
+// Пиши код выше этой строки
+
+
+
+
+
+// // Задача 30 модуль 6
+
+/*const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+ };
+ const playtimes = Object.values(players); // [1270, 468, 710, 244]
+ // Пиши код ниже этой строки
+ 
+ const totalPlayTime = playtimes.reduce((acc, playtime) => acc +=  playtime);
+ 
+ // Пиши код выше этой строки
+ const averagePlayTime = totalPlayTime / playtimes.length;*/
+
+
+
+
+
+ // Метод reduce() и массив объектов
+
+ // При работе с массивом объектов выполняется редуцирование по значению какого-то свойства. Например, есть массив студентов с баллами за тест.
+ // Необходимо получить средний бал.
+
+ /*const students = [
+  { name: 'Манго', score: 83 },
+  { name: 'Поли', score: 59 },
+  { name: 'Аякс', score: 37 },
+  { name: 'Киви', score: 94 },
+  { name: 'Хьюстон', score: 64 },
+];
+
+// Название аккумулятора может быть произвольным, это просто параметр функции
+const totalScore = students.reduce((total, student) => {return total + student.score;}, 0);
+
+const averageScore = totalScore / students.length;
+console.log(averageScore);*/
+
+
+
+
+
+// // Задача 31 модуль 6
+
+// Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён. 
+// Рассчитать время для каждого из игроков, можно разделив его время (свойство playtime) на количество игр (свойство gamesPlayed).
+
+/*const players = [
+  { name: 'Манго', playtime: 1270, gamesPlayed: 4 },
+  { name: 'Поли', playtime: 469, gamesPlayed: 2 },
+  { name: 'Аякс', playtime: 690, gamesPlayed: 3 },
+  { name: 'Киви', playtime: 241, gamesPlayed: 1 },
+];
+// Пиши код ниже этой строки
+const totalAveragePlaytimePerGame = players.reduce((total, player) => {return total  + player.playtime/player.gamesPlayed;}, 0);
+console.log(totalAveragePlaytimePerGame);*/
+
+
+
+
+
