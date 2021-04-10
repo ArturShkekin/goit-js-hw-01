@@ -5851,10 +5851,208 @@ console.log(averageScore);*/
   { name: 'Киви', playtime: 241, gamesPlayed: 1 },
 ];
 // Пиши код ниже этой строки
-const totalAveragePlaytimePerGame = players.reduce((total, player) => {return total  + player.playtime/player.gamesPlayed;}, 0);
+const totalAveragePlaytimePerGame = players.reduce((total, player) => {return total + player.playtime/player.gamesPlayed;}, 0);
 console.log(totalAveragePlaytimePerGame);*/
 
 
+
+
+
+
+
+// // Задача 32 модуль 6
+
+// Задача. Общий баланс пользователей
+
+// Дополни функцию calculateTotalBalance(users) так, чтобы она считала и возвращала сумму всех средств (свойство balance) которые хранят 
+// пользователи из массива users.
+
+
+// Пиши код ниже этой строки
+// const calculateTotalBalance = users => users.reduce((totalBalance, user) => {return totalBalance += user.balance}, 0); // это надо
+// Пиши код выше этой строки
+
+
+// // Задача 33 модуль 6
+
+// Задача. Общее количество друзей
+
+// Дополни функцию getTotalFriendCount(users) так, чтобы она считала и возвращала общее количество друзей (свойство friends) всех 
+// пользователей из массива users.
+
+// Пиши код ниже этой строки
+
+
+//const fff = users.flatMap(user => user.friends); // это подготовка
+//console.log(fff);
+// const getTotalFriendCount = users => users.reduce(total => (total = users.flatMap(user => user.friends).length)); // это все что надо
+// console.log(getTotalFriendCount);
+// Пиши код выше этой строки
+
+
+
+
+
+// // Метод sort()
+
+// Метод sort() сортирует элементы массива, но в отличии от остальных перебирающих методов, он сортирует исходный массив.
+
+// Сортирует и изменяет исходный массив.
+// Возвращает изменённый массив, то есть ссылку на отсортированный исходный.
+// По умолчанию сортирует по возрастанию.
+// Сравнение чисел выполняется по их значению.
+// Сравнение всего остального происходит путём приведения их к строке и сравнения порядковых номеров в таблице Unicode.
+
+//// Массив чисел будет отсортирован по возврастанию
+/*const scores = [61, 19, 74, 35, 92, 56];
+scores.sort();
+console.log(scores); // [19, 35, 56, 61, 74, 92]
+
+// Массив строк сортируется по алфавиту
+const students = ['Вика', 'Андрей', 'Олег', 'Юля', 'Борис', 'Катя'];
+students.sort();
+console.log(students); // [ 'Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля' ]
+
+// При этом порядковый номер заглавных букв меньше чем у прописных
+const letters = ['b', 'B', 'a', 'A', 'c', 'C'];
+letters.sort();
+console.log(letters); // ['A', 'B', 'C', 'a', 'b', 'c']*/
+
+
+// Из-за того, что сортируется исходный массив, нарушается принцип чистоты функций и нельзя удобно сделать несколько производных коллекций на базе 
+// исходной. Например, сделать коллекцию отсортированную по возрастанию, а другую по убыванию. Поэтому перед сортировкой делают полную копию исходного
+// массива и сортируют уже её.
+
+/*const scores = [61, 19, 74, 35, 92, 56];
+const ascendingScores = [...scores].sort();
+
+console.log(scores); // [61, 19, 74, 35, 92, 56]
+console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]*/
+
+
+
+
+
+// // Задача 34 модуль 6
+
+// Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, 
+// а в переменной alphabeticalAuthors копия массива имён авторов authors отсортированная в по алфавиту.
+
+/*const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  'Ли Танит',
+  'Бернард Корнуэлл',
+  'Роберт Шекли',
+  'Федор Достоевский'
+];
+// Пиши код ниже этой строки
+
+const ascendingReleaseDates = [...releaseDates].sort(); // это все что надо
+console.log(ascendingReleaseDates);
+const alphabeticalAuthors = [...authors].sort(); // это все что надо
+console.log(alphabeticalAuthors);*/
+
+
+
+
+// Свой порядок сортировки чисел
+
+// Для указания своего порядка сортировки методу sort(callback) нужно передать коллбек-функцию с двумя параметрами. Это функция сравнения
+// (compare function), порядок сортировки зависит от её результата. Метод sort() будет вызывать её для произвольных двух элементов.
+
+/*массив.sort((firstEl, secondEl) => {
+  // Тело коллбек-функции
+});*/
+
+
+// firstEl - первый элемент для сравнения.
+// secondEl - второй элемент для сравнения.
+// Если вызов compareFunction(firstEl, secondEl) возвращает любое отрицательное значение, сортировка поставит firstEl перед secondEl. 
+// Это сортировка по возрастанию.
+
+/*const scores = [61, 19, 74, 35, 92, 56];
+const ascendingScores = [...scores].sort((a, b) => a - b);
+console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]*/
+
+
+// Если вызов compareFunction(firstEl, secondEl) возвращает любое положительное значение больше нуля, сортировка поставит secondEl перед firstEl. 
+// Это сортировка по убыванию.
+
+/*const scores = [61, 19, 74, 35, 92, 56];
+const descendingScores = [...scores].sort((a, b) => b - a);
+console.log(descendingScores); // [92, 74, 61, 56, 35, 19]*/
+
+// Eсли вызов compareFunction(firstEl, secondEl) вернёт 0, сортировка оставит firstEl и secondEl неизменными по отношению друг к другу, но 
+// отсортирует их по отношению ко всем другим элементам. Но вообще не важно, что возвращать, если их взаимный порядок не имеет значения.
+
+
+
+
+// // Задача 35 модуль 6
+
+// Онлайн бибилиотеке необходимо отображать книги сортированные по дате издания, по её возрастанию или убыванию. Дополни код так, чтобы в 
+// переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной descendingReleaseDates
+//  копия отсортированная по убыванию.
+
+/*const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// Пиши код ниже этой строки
+
+const ascendingReleaseDates = [...releaseDates].sort((a,b) => a - b); // это надо
+console.log(ascendingReleaseDates);
+
+const descendingReleaseDates = [...releaseDates].sort((a,b) => b - a); // это надо
+console.log(descendingReleaseDates);*/
+
+
+// Свой порядок сортировки строк
+
+// Для сортировки строк в алфавитном порядке, по возрастанию или убыванию, используется метод строк localeCompare().
+
+// firstString.localeCompare(secondString)
+
+// Он вызывается на строке которую нужно сравнить (firstString) с той, что передана ему как аргумент (secondString).
+//
+/*'a'.localeCompare('b'); // -1
+'b'.localeCompare('a'); // 1
+'a'.localeCompare('a'); // 0
+'b'.localeCompare('b'); // 0*/
+
+
+// Возвращает отрицательное значение если firstString должна быть перед secondString.
+// Возвращает положительное значение больше нуля если firstString должна быть после secondString.
+// Если строки одинаковы, возвращается ноль.
+// Это удобно использовать при сортировке строк, так как метод sort() ожидает такие же значения от коллбек-функции.
+
+/*const students = ['Вика', 'Андрей', 'Олег', 'Юля', 'Борис', 'Катя'];
+
+const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
+console.log(inAlphabetOrder); // ['Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля']
+
+const inReversedOrder = [...students].sort((a, b) => b.localeCompare(a));
+console.log(inReversedOrder); // ['Юля', 'Олег', 'Катя', 'Вика', 'Борис', 'Андрей']*/
+
+
+
+
+// // Задача 36 модуль 6
+
+// Онлайн бибилиотеке необходимо отображать книги отсортированные по автору, в алфавитном и обратном алфавитном порядке. Дополни код так, 
+// чтобы в переменной authorsInAlphabetOrder получилась отсортированная по алфавиту копия массива authors, а в переменной authorsInReversedOrder
+//  копия отсортированная в обратном алфавитном порядке.
+
+/*const authors = [
+  'Ли Танит',
+  'Бернард Корнуэлл',
+  'Роберт Шекли',
+  'Федор Достоевский',
+  'Говард Лавкрафт'
+];
+// Пиши код ниже этой строки
+
+const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b)); // это надо 
+console.log(authorsInAlphabetOrder);
+const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a)); // это надо 
+console.log(authorsInReversedOrder);*/
 
 
 
