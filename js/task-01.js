@@ -5884,7 +5884,6 @@ console.log(totalAveragePlaytimePerGame);*/
 
 
 //const fff = users.flatMap(user => user.friends); // это подготовка
-//console.log(fff);
 // const getTotalFriendCount = users => users.reduce(total => (total = users.flatMap(user => user.friends).length)); // это все что надо
 // console.log(getTotalFriendCount);
 // Пиши код выше этой строки
@@ -6053,6 +6052,431 @@ const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b)); 
 console.log(authorsInAlphabetOrder);
 const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a)); // это надо 
 console.log(authorsInReversedOrder);*/
+
+
+
+
+
+
+// Сортировка объектов
+// При работе с массивом объектов сортировка выполняется по числовому или строчному значению какого-то свойства. Например, есть группа студентов
+// с баллами за тест. Необходимо отсортировать массив объектов по возрастанию и убыванию количества баллов, и по имени студента.
+
+/*const students = [
+  { name: 'Манго', score: 83 },
+  { name: 'Поли', score: 59 },
+  { name: 'Аякс', score: 37 },
+  { name: 'Киви', score: 94 },
+];
+
+const inAscendingScoreOrder = students.sort(
+  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+);
+
+const inDescendingScoreOrder = students.sort(
+  (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+);
+
+const inAlphabeticalOrder = students.sort((firstStudent, secondStudent) =>
+  firstStudent.name.localeCompare(secondStudent.name)
+);*/
+
+
+
+
+
+// // Задача 37 модуль 6
+
+// Дополни код так, чтобы:
+// В переменной sortedByAuthorName получился массив книг отсортированный по имени автора в алфавитном порядке.
+// В переменной sortedByReversedAuthorName получился массив книг отсортированный по имени автора в обратном алфавитном порядке.
+// В переменной sortedByAscendingRating получился массив книг отсортированный по возрастанию рейтинга.
+// В переменной sortedByDescentingRating получился массив книг отсортированный по убыванию рейтинга.
+
+/*const books = [
+  { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+  { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+  { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+  { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+  { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+];
+// Пиши код ниже этой строки
+
+const sortedByAuthorName = [...books].sort((firstBook, secondBook) => firstBook.author.localeCompare(secondBook.author)); // это надо
+
+const sortedByReversedAuthorName = [...books].sort((firstBook, secondBook) => secondBook.author.localeCompare(firstBook.author)); // это надо
+
+const sortedByAscendingRating = [...books].sort((firstBook, secondBook) => firstBook.rating - secondBook.rating); // это надо
+
+const sortedByDescentingRating = [...books].sort((firstBook, secondBook) => secondBook.rating - firstBook.rating); // это надо*/
+
+
+
+
+
+// // Задача 38 модуль 6
+
+// Задача. Сортировка по балансу
+
+// Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала массив пользователей отсортированный по возрастанию их баланса 
+// (свойство balance).
+
+
+/*const users =
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male'
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female'
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male'
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female'
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male'
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male'
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female'
+  }
+];
+
+// Пиши код ниже этой строки
+const sortByAscendingBalance = users => users.sort((firstUser, secondUser) => firstUser.balance - secondUser.balance); // это все
+// Пиши код выше этой строки*/
+
+
+
+
+// // Задача 39 модуль 6
+
+// Задача. Сортировка по количеству друзей
+
+// Дополни функцию sortByDescendingFriendCount(users) так, чтобы она возвращала массив пользователей отсортированный по убыванию количества 
+// их друзей (свойство friends).
+
+// Пиши код ниже этой строки
+// const sortByDescendingFriendCount = users => [...users].sort((firstUser, secondUser) =>
+// secondUser.friends.length - firstUser.friends.length); // это все
+   
+
+// Пиши код выше этой строки
+
+
+
+
+
+// // Задача 40 модуль 6
+// Задача. Сортировка по имени
+
+// Дополни функцию sortByName(users) так, чтобы она возвращала массив пользователей отсортированный по их имени (свойство name) в алфавитном порядке.
+
+// Пиши код ниже этой строки
+// const sortByName = users => [...users].sort((firstUser, secondUser) => firstUser.name.localeCompare(secondUser.name)); // это все
+// Пиши код выше этой строки
+
+
+
+
+// Цепочки методов (чейнинг, chaining)
+// Есть массив объектов с именами, баллами и посещаемыми предметами каждого студента.
+ /*const students = [
+  { name: 'Манго', score: 83, courses: ['математика', 'физика'] },
+  { name: 'Поли', score: 59, courses: ['информатика', 'математика'] },
+  { name: 'Аякс', score: 37, courses: ['физика', 'биология'] },
+  { name: 'Киви', score: 94, courses: ['литература', 'информатика'] },
+];
+
+// Необходимо получить массив их имён отсортированный по возрастанию баллов за тест. Для этого мы отсортируем копию массива методом sort(), 
+// после чего методом map() составим массив значений свойства name из сортированного массива.
+
+const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
+const names = sortedByAscendingScore.map((student) => student.name);
+
+console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+// Проблема в том, что у нас появляются промежуточные переменные после каждой операции кроме финальной. Переменная sortedByAscendingScore лишняя 
+// и необходима только для хранения промежуточного результата.
+// Избавиться от таких «мёртвых» переменных можно группируя вызовы методов в цепочки. Каждый следующий метод будет выполняться на результате
+// работы предыдущего.
+
+const names = [...students].sort((a, b) => a.score - b.score).map((student) => student.name);
+
+console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+// Делаем копию исходного массива перед сортировкой.
+// На копии вызываем метод sort().
+// К результату работы метода sort() применяем метод map().
+// Переменной names присваивается результат работы метода map().
+// Получим сортированный по алфавиту массив уникальных посещаемых предметов.
+
+
+const uniqueSortedCourses = students
+  .flatMap((student) => student.courses)
+  .filter((course, index, array) => array.indexOf(course) === index)
+  .sort((a, b) => a.localeCompare(b));
+
+console.log(uniqueSortedCourses); // ['биология', 'информатика', 'литература', 'математика', 'физика']
+
+// На исходном массиве вызываем flatMap() и делаем разглаженный массив всех курсов.
+// К результату метода flatMap() применяем метод filter() для фильтрации уникальных элементов.
+// На результате метода filter() вызываем sort().
+// Переменной uniqueSortedCourses присваивается результат работы метода sort().
+// Цепочка методов может быть произвольной длины, но обычно не более 2-3 операций. Во-первых, перебирающие методы используются для
+//  сравнительно простых операций над коллекцией. Во-вторых, вызов каждого последующего метода, это дополнительный перебор массива, 
+// что при достаточном количестве, может сказаться на производительности.*/
+
+
+
+
+
+// // Задача 41 модуль 6
+
+// Дополни код так, чтобы в переменной names получился массив имён авторов в алфавитном порядке, рейтинг книг которых больше значения 
+// переменной MIN_BOOK_RATING.
+
+/*const books = [
+  { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+  { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+  { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+  { title: 'Красна как кровь', author: 'Ли Танит', rating: 8.14 },
+  { title: 'Сны В Ведьмином Доме', author: 'Говард Лавкрафт', rating: 8.67 }
+];
+const MIN_BOOK_RATING = 8;
+// Пиши код ниже этой строки
+ 
+// вот вариант решения
+const names = [...books].sort((firstBook, secondBook) => firstBook.author.localeCompare(secondBook.author))
+.filter((book) => book.rating > MIN_BOOK_RATING)
+.map(book => book.author);*/
+
+
+
+
+// // Задача 42 модуль 6
+
+// Задача. Пользователи и друзья
+
+// Дополни функцию getNamesSortedByFriendCount(users) так, чтобы она возвращала массив имён пользователей отсортированный по возрастанию 
+// количества их друзей (свойство friends).
+
+/*const users =
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male'
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female'
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male'
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female'
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male'
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male'
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female'
+  }
+];
+// это правильный вариант
+// Пиши код ниже этой строки
+const getNamesSortedByFriendCount = users => [...users].sort((firstUser, secondUser) => firstUser.friends.length - secondUser.friends.length)
+.map(user => user.name);
+// Пиши код выше этой строки*/
+
+
+
+
+// // Задача 43 модуль 6
+// Задача. Имена друзей
+
+// Дополни функцию getSortedFriends(users) так, чтобы она возвращала массив уникальных имён друзей (свойство friends) отсортированный по алфавиту .
+
+
+// Правильный вариант
+// Пиши код ниже этой строки
+/*const getSortedFriends = users => users.flatMap(user => user.friends)
+.filter((friends, index, array) => array.indexOf(friends) === index)
+.sort((firstName, secondName) => firstName.localeCompare(secondName));*/
+// Пиши код выше этой строки
+
+
+
+// // Задача 44 модуль 6
+
+// Задача. Общий баланс
+
+// Дополни функцию getTotalBalanceByGender(users, gender) так, чтобы она возвращала общий баланс пользователей (свойство balance),
+//  пол которых (свойство gender) совпадает со значением параметра gender.
+
+/*const users =
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male'
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female'
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male'
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female'
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male'
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male'
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female'
+  }
+];*/
+
+// Пиши код ниже этой строки
+/*const getTotalBalanceByGender = (users, gender) => users.filter(user => user.gender === gender)  // вот верное решение
+.reduce((totalBalance, user) => {return totalBalance += user.balance}, 0);
+console.log(getTotalBalanceByGender);*/
+// Пиши код выше этой строки
 
 
 
