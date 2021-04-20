@@ -1,3 +1,6 @@
+"use strict";
+
+
 /* Напиши скрипт выбора отеля по количеству звезд
 * 1-20$, 2-30$, 3-50$, 4-70$, 5-120$
 *
@@ -6472,11 +6475,173 @@ const getNamesSortedByFriendCount = users => [...users].sort((firstUser, secondU
   }
 ];*/
 
-// Пиши код ниже этой строки
-/*const getTotalBalanceByGender = (users, gender) => users.filter(user => user.gender === gender)  // вот верное решение
+// Пиши код ниже этой строки   // вот верное решение
+/*const getTotalBalanceByGender = (users, gender) => users.filter(user => user.gender === gender)  
 .reduce((totalBalance, user) => {return totalBalance += user.balance}, 0);
 console.log(getTotalBalanceByGender);*/
 // Пиши код выше этой строки
+
+
+
+
+
+
+// Просто задачи
+/*function convertToF(celsius) {
+  let fahrenheit;
+  fahrenheit = celsius*9/5+32;
+  return fahrenheit;
+}
+
+console.log(convertToF(0));*/
+
+
+
+/*function reverString(str) {
+  const rev = str.reverse();
+    return rev;
+  }
+  
+  reverString("hello");*/
+
+
+
+
+// . Работа с DOM-узлами  Создание
+/*const heading = document.createElement('h1');
+console.log(heading); // <h1></h1>
+
+heading.textContent = 'This is a heading';
+console.log(heading); // <h1>This is a heading</h1>
+
+const image = document.createElement('img');
+image.setAttribute('src', 'https://placeimg.com/640/480/nature');
+image.setAttribute('alt', 'nature');
+
+console.log(image); // <img src="https://placeimg.com/640/480/nature" alt="nature">*/
+
+
+
+
+
+
+
+
+
+// Модуль 7
+
+
+
+
+
+// Задача 1
+/*const navitEl = document.querySelectorAll(".item").length;
+console.log(`В списке ${navitEl} категории`);
+
+const nameCat1 = document.querySelector(".сategory1");
+console.log("Категория:",nameCat1.textContent);
+
+const list1El = document.querySelector(".item-сategory1");
+console.log(`Количество элементов ${list1El.children.length}`);
+
+const nameCat2 = document.querySelector(".сategory2");
+console.log("Категория:", nameCat2.textContent);
+
+const list2El = document.querySelector(".item-сategory2");
+console.log(`Количество элементов ${list2El.children.length}`);
+
+const nameCat3 = document.querySelector(".сategory3");
+console.log("Категория:", nameCat3.textContent);
+
+const list3El = document.querySelector(".item-сategory3");
+console.log(`Количество элементов ${list3El.children.length}`);*/
+
+
+
+
+// Теория добавления
+
+// Создадим еще один li и вставим его в конец списка
+/*const item = document.createElement("a");
+item.href = "#";
+item.classList.add("btn");
+item.textContent = "item 4";
+console.log(item);
+
+const nav = document.querySelector(".nav");
+nav.appendChild(item);
+console.log(nav);
+// Создадим заголовок и вставим его в container перед списком
+const heading = document.createElement("h1");
+heading.textContent = "Nav heading";
+console.log(heading);
+
+const container = document.querySelector(".container");
+container.insertBefore(heading, nav);
+console.log(container);*/
+
+
+
+
+// Образец
+/*const list = document.querySelector(".list");
+
+// Добавлем элемент в конец списка
+const item = document.createElement("li");
+item.textContent = "Poly";
+list.append(item);
+
+// Добавляем элемент в начало списка
+const clone = item.cloneNode(true);
+clone.textContent = "Ajax";
+list.prepend(clone);
+
+// Добавляет заголовок перед списком
+const title = document.createElement("h2");
+title.textContent = "Список клиентов";
+list.before(title);
+
+// Добавляет абзац после списка
+const text = document.createElement("p");
+text.textContent =
+  "Lorem ipsum dolor sit amet, cuasi nihil in asperiores ad distinctio illo et debitis error iure voluptate numquam maiores nisi!";
+list.after(text);*/
+
+
+
+// Задание 2
+/*const ingredients = [
+  'Картошка',
+  'Грибы',
+  'Чеснок',
+  'Помидоры',
+  'Зелень',
+  'Приправы',
+];
+
+const contentEl = document.querySelector(".ingredients");
+
+const partEl = document.createElement("li");
+partEl.textContent = "Картошка";
+
+const clone1 = partEl.cloneNode(true);
+clone1.textContent = "Грибы";
+
+const clone2 = partEl.cloneNode(true);
+clone2.textContent = "Чеснок";
+
+const clone3 = partEl.cloneNode(true);
+clone3.textContent = "Помидоры";
+
+const clone4 = partEl.cloneNode(true);
+clone4.textContent = "Зелень";
+
+const clone5 = partEl.cloneNode(true);
+clone5.textContent = "Приправы";
+
+contentEl.append(partEl, clone1, clone2, clone3, clone4, clone5);
+console.log(contentEl);*/
+
 
 
 
